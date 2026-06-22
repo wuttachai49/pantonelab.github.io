@@ -65,5 +65,40 @@
             "url": "database/bricyte-e6.html"
              }
     ]
-}
+},
+    {
+        "id": "cx_series",
+        "name": "Mindray CX Series",
+        "type": "Coagulation Analyzer",
+        "manufacturer": "Shenzhen Mindray Bio-Medical Electronics",
+        "description": "Advanced coagulation analyzer series with models CX-6000, CX-6100, and CX-9000. Complete training hub with specifications, QC management, troubleshooting, and setup guides.",
+        "parameters": [
+            "PT - Prothrombin Time",
+            "APPT - Activated Partial Thromboplastin Time",
+            "INR - International Normalized Ratio",
+            "Fibrinogen - Clot formation measurement",
+            "D-dimer - Fibrin degradation products",
+            "Thrombin Time",
+            "Factor Assays (V, VII, VIII, IX, X, XI, XII)",
+            "Protein C and S",
+            "Plasminogen",
+            "Antithrombin"
+        ],
+        "troubleshooting": [
+            "Probe Clog: Run Sample Probe Unclog from Maintenance menu",
+            "Wash Solution Exhausted: Replace wash solution container and run Tube Prime",
+            "Waste Container Full: Empty biohazard waste container safely",
+            "Invalid QC Result: Check QC material lot, expiration date, and storage temperature",
+            "Temperature Alarm: Verify power supply and airflow, cool system 15 minutes, restart",
+            "Barcode Not Scanned: Clean scanner window, verify barcode clarity, check sample positioning"
+        ],
+        "notes": "High-precision coagulation testing for hemostasis monitoring. All models include Westgard QC rules, LIS integration, and RFID support. Daily maintenance is critical for accuracy and preventing carryover contamination.",
+        "attachments": [
+            {
+                "name": "🎓 CX Series Training Hub",
+                "type": "Interactive HTML",
+                "url": "cx-series-hub.html"
+            }
+        ]
+    }
 ]
