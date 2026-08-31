@@ -99,11 +99,6 @@
         "notes": "High-precision coagulation testing using optical clot detection (OCD) methodology. All models include Westgard QC rules, LIS integration, RFID support, and comprehensive measurement principle documentation. Optical measurement principle tracks plasma turbidity change during coagulation for accurate clot detection. Daily maintenance is critical for accuracy and preventing carryover contamination. Supports both 3.2% sodium citrate and alternative anticoagulants.",
         "attachments": [
             {
-                "name": "🎓 CX Series Complete Training Hub",
-                "type": "Interactive HTML",
-                "url": "cx-series-documentation.html"
-            },
-            {
                 "name": "📁 CX Series Documentation Portal",
                 "type": "Interactive HTML",
                 "url": "cx-series-documentation/index.html"
