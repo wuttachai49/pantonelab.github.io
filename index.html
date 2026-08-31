@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CX-Series Documentation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; }
+        .header { background: linear-gradient(135deg, #065A82 0%, #02C39A 100%); color: white; padding: 60px 20px; text-align: center; }
+        .header h1 { font-size: 42px; margin-bottom: 10px; }
+        .header p { font-size: 18px; opacity: 0.95; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .section { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px; }
+        .section h2 { color: #065A82; font-size: 24px; margin-bottom: 20px; }
+        .section p { line-height: 1.8; color: #555; margin-bottom: 15px; }
+        .doc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 30px 0; }
+        .doc-card { background: linear-gradient(135deg, #f0f8fb 0%, #f9f9f9 100%); border: 2px solid #1C7293; border-radius: 8px; padding: 25px; text-align: center; transition: transform 0.3s; }
+        .doc-card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,0.15); }
+        .doc-card.featured { border: 3px solid #f44336; background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%); }
+        .doc-card h3 { color: #065A82; font-size: 18px; margin-bottom: 10px; }
+        .doc-card .badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 12px; margin-bottom: 10px; font-weight: bold; }
+        .doc-card .badge.new { background: #f44336; color: white; }
+        .doc-card .badge.deep { background: #2196f3; color: white; }
+        .doc-card .badge.manual { background: #ff9800; color: white; }
+        .doc-card p { font-size: 14px; color: #666; margin-bottom: 20px; line-height: 1.6; }
+        .btn { display: inline-block; background: linear-gradient(135deg, #065A82 0%, #02C39A 100%); color: white; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: opacity 0.3s; }
+        .btn:hover { opacity: 0.9; }
+        .feature-list { list-style: none; margin: 20px 0; }
+        .feature-list li { padding: 10px 0; padding-left: 30px; position: relative; color: #555; }
+        .feature-list li:before { content: "✓"; position: absolute; left: 0; color: #02C39A; font-weight: bold; font-size: 18px; }
+        .footer { text-align: center; padding: 30px; color: #999; font-size: 14px; border-top: 1px solid #ddd; }
+        .highlight-box { background: linear-gradient(135deg, #fff3cd 0%, #fffacd 100%); border-left: 4px solid #ffc107; padding: 20px; border-radius: 5px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🔬 CX-Series Documentation Hub</h1>
+    <p>Complete Product Reference for Sales, Marketing & Laboratory Professionals</p>
+</div>
+
+<div class="container">
+
+<div class="section">
+    <h2>Welcome to CX-Series Documentation</h2>
+    <p>This comprehensive resource provides everything you need to understand, sell, and operate CX-6000 and CX-9000 coagulation analyzers.</p>
+    <p>Each document combines practical sales content with detailed technical specifications, detection methods, clinical applications, and advanced procedural guides.</p>
+</div>
+
+<div class="section">
+    <h2>📚 Available Documentation</h2>
+    
+    <div class="doc-grid">
+        <div class="doc-card">
+            <h3>📋 Product Summary & Technical Specifications</h3>
+            <p>Complete overview combining sales benefits, parameter details, detection methods, wavelengths, and technical specifications in one unified reference.</p>
+            <a href="CX-Series_Product_Summary.html" class="btn">View Document</a>
+        </div>
+        
+        <div class="doc-card featured">
+            <div class="badge new">NEW</div>
+            <div class="badge manual">FROM MANUAL</div>
+            <h3>🔧 Section 7.13 - Mixing Tests Step-by-Step</h3>
+            <p>Direct from CX-6000/CX-6010 operator's manual! Complete breakdown of all three subsections with clinical context. Perfect for training and reference.</p>
+            <a href="Section_7.13_Mixing_Tests.html" class="btn">View Manual Guide</a>
+        </div>
+        
+        <div class="doc-card featured">
+            <div class="badge deep">DEEP DIVE</div>
+            <h3>🔬 CX-9000 Mixing Study Deep Dive</h3>
+            <p>Comprehensive technical guide with 7-step procedure breakdown, all calculations, interpretation logic, real clinical examples, and troubleshooting.</p>
+            <a href="CX-9000_Mixing_Study_Deep_Dive.html" class="btn">View Deep Dive</a>
+        </div>
+        
+        <div class="doc-card">
+            <h3>🧬 APPT Mixing Study Guide</h3>
+            <p>Focused guide explaining mixing study principles, 7-step automated procedure, interpretation guidelines, and real clinical examples.</p>
+            <a href="CX-Series_Mixing_Study_Complete.html" class="btn">View Guide</a>
+        </div>
+
+        <div class="doc-card">
+            <h3>🧪 Sales Summary</h3>
+            <p>Focused sales document highlighting key benefits, competitive advantages, parameter explanations, and system comparison for marketing teams.</p>
+            <a href="CX-Series_Sales_Summary.html" class="btn">View Summary</a>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>📖 How to Use These Documents</h2>
+
+    <h3>For Different Audiences:</h3>
+
+    <p><strong>💼 Sales Teams:</strong> Start with <a href="CX-Series_Product_Summary.html" style="color: #02C39A; font-weight: bold;">Product Summary & Technical Specifications</a> for comprehensive benefits. Use <a href="CX-Series_Sales_Summary.html" style="color: #02C39A; font-weight: bold;">Sales Summary</a> for quick talking points. Reference the manual guide to show operators what they'll work with.</p>
+
+    <p><strong>🏥 Laboratory Managers:</strong> Read <a href="CX-Series_Product_Summary.html" style="color: #02C39A; font-weight: bold;">Product Summary & Technical Specifications</a> for operational overview. Use <a href="Section_7.13_Mixing_Tests.html" style="color: #02C39A; font-weight: bold;">Section 7.13 Guide</a> to train staff on actual manual procedures.</p>
+
+    <p><strong>🧬 Lab Technicians:</strong> Use <a href="Section_7.13_Mixing_Tests.html" style="color: #02C39A; font-weight: bold;">Section 7.13 Guide</a> as daily reference while operating analyzer. Refer to <a href="CX-9000_Mixing_Study_Deep_Dive.html" style="color: #02C39A; font-weight: bold;">CX-9000 Deep Dive</a> for advanced troubleshooting and clinical interpretation.</p>
+
+    <p><strong>👨‍⚕️ Physicians/Hematologists:</strong> Read <a href="CX-Series_Mixing_Study_Complete.html" style="color: #02C39A; font-weight: bold;">APPT Mixing Study Guide</a> for clinical decision-making. Reference <a href="CX-9000_Mixing_Study_Deep_Dive.html" style="color: #02C39A; font-weight: bold;">CX-9000 Deep Dive</a> Part 7 for clinical decision guidance.</p>
+
+    <p><strong>📚 Medical Students/Trainees:</strong> Start with <a href="CX-Series_Mixing_Study_Complete.html" style="color: #02C39A; font-weight: bold;">APPT Mixing Study Guide</a> for fundamentals. Advance to <a href="CX-9000_Mixing_Study_Deep_Dive.html" style="color: #02C39A; font-weight: bold;">CX-9000 Deep Dive</a> for comprehensive technical knowledge.</p>
+</div>
+
+<div class="section">
+    <h2>🎯 What Section 7.13 Covers (NEW)</h2>
+    
+    <div class="highlight-box">
+        <h3 style="margin-top: 0;">📖 Direct from CX-6000/CX-6010 Operator's Manual</h3>
+        <p><strong>Section 7.13: Performing Mixing Tests</strong> is the official procedure for running mixing studies on CX-6000/CX-6010 analyzers. Our detailed explanation covers:</p>
+    </div>
+
+    <h3>7.13.1 - Preparing Normal Plasma</h3>
+    <ul style="margin-left: 20px;">
+        <li>✓ Commercial vs. prepared normal plasma options</li>
+        <li>✓ Mandatory requirements for healthy donor samples</li>
+        <li>✓ Sample quality criteria (NO hemolysis, icterus, lipemia)</li>
+        <li>✓ Factor concentration requirements (80%-120%)</li>
+        <li>✓ Frozen plasma handling procedure (5-10 min at 37°C)</li>
+        <li>✓ QC testing requirement BEFORE using</li>
+    </ul>
+
+    <h3>7.13.2 - Preparing Patient Samples</h3>
+    <ul style="margin-left: 20px;">
+        <li>✓ Standard sample preparation procedures</li>
+        <li>✓ Quality requirements matching normal plasma</li>
+        <li>✓ Sample handling and timing</li>
+        <li>✓ Special considerations for mixing tests</li>
+    </ul>
+
+    <h3>7.13.3 - Starting the Mixing Tests (5 Steps)</h3>
+    <ul style="margin-left: 20px;">
+        <li>✓ Step 1: Confirm test parameters in Settings</li>
+        <li>✓ Step 2: Select mixing tests on Sample Orders</li>
+        <li>✓ Step 3: Set up sample information</li>
+        <li>✓ Step 4: Place samples & normal plasma in racks (CRITICAL)</li>
+        <li>✓ Step 5: Follow standard analysis protocol</li>
+    </ul>
+
+    <h3>Plus Our Additions:</h3>
+    <ul style="margin-left: 20px;">
+        <li>✓ Clinical context for each requirement</li>
+        <li>✓ WHY each step matters</li>
+        <li>✓ What the analyzer does automatically</li>
+        <li>✓ Interpretation of results</li>
+        <li>✓ Troubleshooting guide</li>
+        <li>✓ Complete workflow diagram</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>🚀 Documentation Levels</h2>
+
+    <p><strong>Level 1 - Quick Reference (10 min):</strong> <a href="CX-Series_Sales_Summary.html">Sales Summary</a> - Key benefits and features</p>
+
+    <p><strong>Level 2 - Operational (30 min):</strong> <a href="Section_7.13_Mixing_Tests.html">Section 7.13 Guide</a> - How to actually perform mixing tests</p>
+
+    <p><strong>Level 3 - Standard (45 min):</strong> <a href="CX-Series_Product_Summary.html">Product Summary & Technical Specifications</a> - Complete technical overview</p>
+
+    <p><strong>Level 4 - Clinical (30 min):</strong> <a href="CX-Series_Mixing_Study_Complete.html">APPT Mixing Study Guide</a> - Clinical interpretation</p>
+
+    <p><strong>Level 5 - Expert (90 min):</strong> <a href="CX-9000_Mixing_Study_Deep_Dive.html">CX-9000 Deep Dive</a> - Complete technical mastery with all calculations</p>
+</div>
+
+<div class="section">
+    <h2>🎯 Key Features Across CX-Series</h2>
+    <ul class="feature-list">
+        <li>7 complete coagulation parameters</li>
+        <li>400-450 tests/hour high-throughput</li>
+        <li>Advanced optical detection (multiple wavelengths)</li>
+        <li>1st & 2nd Derivative kinetic measurement (CX-9000)</li>
+        <li>800nm near-infrared for hemolytic samples (CX-9000 exclusive)</li>
+        <li>Automated 7-step mixing study with 120-minute incubation (CX-9000)</li>
+        <li>Temperature-controlled processing (37°C ± 0.2°C)</li>
+    </ul>
+</div>
+
+</div>
+
+<div class="footer">
+    <p><strong>CX-Series Complete Documentation</strong> | Sales, Marketing, Technical & Clinical Reference</p>
+    <p>Including Official CX-6000/CX-6010 Operator's Manual - Section 7.13 Breakdown</p>
+    <p style="margin-top: 15px;">Last Updated: June 2026 | For Laboratory & Sales Professionals</p>
+    <p>Questions? Contact: wuttachai49@gmail.com</p>
+</div>
+
+</body>
+</html>

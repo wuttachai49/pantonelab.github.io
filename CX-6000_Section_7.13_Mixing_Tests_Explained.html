@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CX-6000/CX-6010 Section 7.13 - Mixing Tests Step-by-Step</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; color: #333; line-height: 1.7; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #065A82 0%, #02C39A 100%); color: white; padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 36px; margin-bottom: 10px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .section { background: white; margin: 20px 0; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-left: 5px solid #065A82; }
+        .section h2 { color: #065A82; font-size: 28px; margin-bottom: 20px; margin-top: 0; }
+        .section h3 { color: #1C7293; font-size: 20px; margin-top: 25px; margin-bottom: 15px; }
+        .section h4 { color: #02C39A; font-size: 16px; margin-top: 15px; margin-bottom: 10px; font-weight: bold; }
+        .step-box { background: #f0f8fb; border-left: 4px solid #02C39A; padding: 20px; margin: 15px 0; border-radius: 5px; }
+        .step-number { display: inline-block; background: #065A82; color: white; width: 45px; height: 45px; border-radius: 50%; text-align: center; line-height: 45px; font-weight: bold; margin-right: 15px; font-size: 18px; }
+        .requirement-box { background: linear-gradient(135deg, #fff3cd 0%, #fffacd 100%); border-left: 4px solid #ffc107; padding: 20px; margin: 15px 0; border-radius: 5px; }
+        .warning-box { background: #ffebee; border-left: 4px solid #f44336; padding: 20px; margin: 15px 0; border-radius: 5px; }
+        .table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .table th { background: #065A82; color: white; padding: 12px; text-align: left; font-weight: bold; }
+        .table td { padding: 12px; border-bottom: 1px solid #ddd; }
+        .table tr:nth-child(even) { background: #f9f9f9; }
+        .highlight { background: linear-gradient(135deg, #fff3cd 0%, #fffacd 100%); padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .critical { background: #ffebee; border-left: 4px solid #f44336; padding: 15px; border-radius: 5px; margin: 15px 0; }
+        .note-box { background: #e3f2fd; border-left: 4px solid #2196f3; padding: 15px; border-radius: 5px; margin: 15px 0; }
+        .checklist { background: #f0f8fb; padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #02C39A; }
+        .checklist ul { list-style: none; }
+        .checklist li { padding: 8px 0; padding-left: 25px; position: relative; }
+        .checklist li:before { content: "✓"; position: absolute; left: 0; color: #02C39A; font-weight: bold; font-size: 16px; }
+        .procedure-flow { background: white; border: 2px solid #065A82; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>CX-6000/CX-6010 Operator's Manual</h1>
+    <p>Section 7.13 - Performing Mixing Tests: Complete Step-by-Step Explanation</p>
+</div>
+
+<div class="container">
+
+<!-- SECTION OVERVIEW -->
+<div class="section">
+    <h2>Section 7.13 Overview: Performing Mixing Tests</h2>
+
+    <h3>What is a Mixing Test? (From Manual)</h3>
+    <p><strong>Official Definition:</strong> "Mixing test is a kind of screening test. They are usually performed when the clotting time of patient blood plasma un-explained lengthens. During mixing tests, patient plasma is mixed with normal plasma with specified ratio, and tested for clotting time again."</p>
+
+    <h3>When to Perform Mixing Tests</h3>
+    <ul style="margin-left: 20px; margin-top: 10px;">
+        <li>Patient has unexplained prolonged clotting time (PT or APPT)</li>
+        <li>Need to determine if prolongation is due to factor deficiency or inhibitor</li>
+        <li>As follow-up test when routine coagulation screening is abnormal</li>
+    </ul>
+
+    <h3>The Clinical Logic</h3>
+    <p><strong>Key Principle:</strong> By mixing patient plasma with normal plasma at a specified ratio, the test answers: "Does mixing with normal plasma improve (correct) the patient's clotting time?"</p>
+    <ul style="margin-left: 20px; margin-top: 10px;">
+        <li><strong>If CORRECTS:</strong> Patient likely has factor deficiency (dilution with normal plasma adds missing factors)</li>
+        <li><strong>If DOES NOT CORRECT:</strong> Patient likely has inhibitor (inhibitor attacks normal factors too)</li>
+    </ul>
+
+    <div class="note-box">
+        <strong>Note from Manual:</strong> "For incubated mixing tests, the analyzer incubates the samples for the defined duration, and then start the test." - This is the CX-6000's capability for detecting time-dependent inhibitors.
+    </div>
+</div>
+
+<!-- SECTION 7.13.1 NORMAL PLASMA PREPARATION -->
+<div class="section">
+    <h2>Section 7.13.1: Preparing Normal Plasma</h2>
+
+    <h3>Critical Foundation of Mixing Study</h3>
+    <p>The quality of normal plasma is CRITICAL to the validity of mixing test results. This is your reference standard - it must be reliable.</p>
+
+    <h3>Option 1: Using Commercial Normal Plasma</h3>
+    <div class="step-box">
+        <p><strong>From Manual:</strong> "When using commercial normal plasma, strictly follow the manufacturer's instruction to use and store the normal plasma."</p>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>Purchase from reputable reagent supplier</li>
+            <li>Follow product-specific instructions (each brand may differ)</li>
+            <li>Store according to manufacturer specifications</li>
+            <li>Check expiration date before use</li>
+        </ul>
+    </div>
+
+    <h3>Option 2: Preparing Your Own Normal Plasma (Pooled Plasma)</h3>
+
+    <div class="requirement-box">
+        <h4>📋 Mandatory Requirements from Manual</h4>
+        <p>To prepare normal plasma, ALL of these requirements must be met:</p>
+
+        <h4>1️⃣ Sample Source</h4>
+        <ul style="margin-left: 20px;">
+            <li><strong>Minimum 20 samples</strong> from healthy people (recommended)</li>
+            <li><strong>All donors must have NORMAL routine anticoagulation test results</strong></li>
+            <li>Expected coagulation factor concentration: <strong>80%-120%</strong> (normal range)</li>
+        </ul>
+
+        <h4>2️⃣ Sample Quality</h4>
+        <ul style="margin-left: 20px;">
+            <li><strong>NO hemolysis:</strong> Red blood cells must not be broken (hemoglobin interferes with optical measurement)</li>
+            <li><strong>NO icterus:</strong> No yellow bilirubin discoloration (bilirubin absorbs at 405nm wavelength used by analyzer)</li>
+            <li><strong>NO lipemia:</strong> No lipids/fat (particles scatter light, interfere with turbidimetric measurement)</li>
+        </ul>
+
+        <h4>3️⃣ Freshness</h4>
+        <ul style="margin-left: 20px;">
+            <li><strong>RECOMMENDED: Fresh normal plasma before each mixing test</strong></li>
+            <li>If not fresh, must be frozen and properly handled (see next steps)</li>
+        </ul>
+    </div>
+
+    <h3>Handling Frozen Normal Plasma</h3>
+
+    <div class="step-box">
+        <h4>Step-by-Step Thawing Procedure (From Manual)</h4>
+
+        <span class="step-number">1</span>
+        <h4>Remove from Freezer</h4>
+        <p>Take cryogenic vials (frozen tubes) out of storage</p>
+
+        <span class="step-number">2</span>
+        <h4>Thaw at 37°C Water Bath</h4>
+        <p><strong>Duration:</strong> 5 to 10 minutes</p>
+        <p><strong>Wait until:</strong> Frozen sample completely thaws</p>
+        <p><strong>Temperature:</strong> 37°C (body temperature - same as analyzer)</p>
+
+        <span class="step-number">3</span>
+        <h4>Mix the Sample</h4>
+        <p><strong>Method:</strong> Slightly invert (flip) the vials to well mix</p>
+        <p><strong>Why:</strong> Ensure uniform distribution of coagulation factors after thawing</p>
+
+        <span class="step-number">4</span>
+        <h4>CRITICAL - Do NOT Refreeze!</h4>
+        <p><strong>From Manual:</strong> "Do not freeze and thaw the samples repeatedly."</p>
+        <p><strong>Why:</strong> Repeated freeze-thaw cycles damage coagulation factors and destroy inhibitors, affecting test validity</p>
+    </div>
+
+    <h3>Quality Control Before Using Thawed Normal Plasma</h3>
+
+    <div class="critical">
+        <h4>⚠️ Important Requirement from Manual</h4>
+        <p><strong>"When the normal plasma has been frozen and thawed, perform the routine anticoagulation tests on the plasma first. Perform the mixing tests only when the routine anticoagulation test results are OK."</strong></p>
+
+        <h4>What This Means:</h4>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>Before using thawed normal plasma for mixing tests, you MUST run QC tests on it</li>
+            <li>Run PT, APPT, and Fibrinogen on the normal plasma itself</li>
+            <li>Verify all results are in NORMAL range</li>
+            <li>Only if QC passes → use for mixing tests</li>
+            <li>If QC fails → discard and prepare fresh plasma</li>
+        </ul>
+
+        <h4>Why This Quality Control?</h4>
+        <ul style="margin-left: 20px;">
+            <li>Frozen thawing may have damaged factors</li>
+            <li>Contamination may have occurred</li>
+            <li>Verify plasma is suitable reference standard</li>
+        </ul>
+    </div>
+
+    <h3>Normal Plasma Troubleshooting</h3>
+
+    <div class="warning-box">
+        <h4>What to Do If Normal Plasma QC Fails</h4>
+        <ul style="margin-left: 20px;">
+            <li>❌ DO NOT use for mixing tests</li>
+            <li>❌ DO NOT proceed with patient testing</li>
+            <li>✅ Discard the thawed plasma properly (follow lab protocol)</li>
+            <li>✅ Prepare fresh normal plasma or use new commercial product</li>
+            <li>✅ Retest fresh/new plasma before proceeding</li>
+        </ul>
+    </div>
+</div>
+
+<!-- SECTION 7.13.2 PATIENT SAMPLES -->
+<div class="section">
+    <h2>Section 7.13.2: Preparing Patient Samples</h2>
+
+    <h3>Standard Procedures Apply</h3>
+
+    <p><strong>From Manual:</strong> "Follow standard sample preparation procedures to prepare patient samples. Refer to 7.8 Preparing Samples."</p>
+
+    <p>The manual directs you to standard sample prep (section 7.8), which includes:</p>
+
+    <h3>Patient Sample Requirements for Mixing Tests</h3>
+
+    <div class="requirement-box">
+        <h4>Sample Collection</h4>
+        <ul style="margin-left: 20px;">
+            <li>Collect in standard citrate tubes (3.2% sodium citrate)</li>
+            <li>Proper blood:citrate ratio (usually 9:1)</li>
+            <li>Standard venipuncture technique</li>
+        </ul>
+
+        <h4>Sample Quality</h4>
+        <ul style="margin-left: 20px;">
+            <li>Minimal hemolysis (same requirement as normal plasma)</li>
+            <li>No lipemia or icterus</li>
+            <li>No clots in sample</li>
+        </ul>
+
+        <h4>Sample Handling</h4>
+        <ul style="margin-left: 20px;">
+            <li>Room temperature processing (preferred)</li>
+            <li>Test within specified time frame (typically 4 hours)</li>
+            <li>Proper labeling and identification</li>
+            <li>Protect from light and contamination</li>
+        </ul>
+
+        <h4>Pre-Analysis Preparation</h4>
+        <ul style="margin-left: 20px;">
+            <li>Centrifugation if needed (follow lab protocol)</li>
+            <li>Inspect for quality issues before testing</li>
+            <li>Ensure sample is at room temperature</li>
+        </ul>
+    </div>
+
+    <h3>Special Consideration for Mixing Tests</h3>
+
+    <p><strong>Why sample quality matters in mixing tests:</strong></p>
+    <ul style="margin-left: 20px;">
+        <li>Hemolyzed patient sample → optical interference → invalid results</li>
+        <li>Lipemic or icteric patient sample → inaccurate measurement → wrong diagnosis</li>
+        <li>Patient sample with clots → analyzer blockage or sampling error</li>
+    </ul>
+
+    <div class="note-box">
+        <strong>Clinical Tip:</strong> If patient sample appears hemolyzed, lipemic, or icteric, recollect before performing mixing study. The test must use clear, high-quality samples.
+    </div>
+</div>
+
+<!-- SECTION 7.13.3 STARTING MIXING TESTS -->
+<div class="section">
+    <h2>Section 7.13.3: Starting the Mixing Tests</h2>
+
+    <h3>Complete Step-by-Step Procedure (From Manual)</h3>
+
+    <div class="procedure-flow">
+        <span class="step-number">1</span>
+        <h4>Confirm or Set Test Parameters</h4>
+
+        <p><strong>What to do:</strong> Click "Settings" → "Test Para." on the analyzer software</p>
+
+        <p><strong>What to verify:</strong></p>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>✓ Mixing tests are ENABLED (turned on)</li>
+            <li>✓ Test parameters are correct for your lab</li>
+            <li>✓ Incubation time set correctly (if using incubated mixing)</li>
+            <li>✓ Any special protocols configured</li>
+        </ul>
+
+        <p><strong>Related Sections:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>See 6.3.3 "Configuring Quick Tests" - for general mixing test setup</li>
+            <li>See 6.4.4 "Configuring the Associated Test Program" - for advanced protocol setup</li>
+        </ul>
+
+        <p><strong>Why This Step Matters:</strong> You must ensure the analyzer is configured to run mixing tests with your lab's specific parameters before you start.</p>
+    </div>
+
+    <div class="procedure-flow">
+        <span class="step-number">2</span>
+        <h4>Select Mixing Tests on Sample Orders Screen</h4>
+
+        <p><strong>What to do:</strong> On the "Sample" → "Sample Orders" screen, click to select which mixing tests to perform</p>
+
+        <p><strong>Available Options (typical):</strong></p>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>PT mixing study</li>
+            <li>APPT mixing study</li>
+            <li>Other mixing studies (based on lab configuration)</li>
+        </ul>
+
+        <p><strong>Why This Step Matters:</strong> Tells the analyzer which mixing tests to perform for this batch of samples.</p>
+    </div>
+
+    <div class="procedure-flow">
+        <span class="step-number">3</span>
+        <h4>Set Up Sample Information and Submit</h4>
+
+        <p><strong>In the "Sample Information" area, enter:</strong></p>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li><strong>Sample ID:</strong> Unique identifier for patient sample</li>
+            <li><strong>Sample Position:</strong> Where sample is placed in rack</li>
+            <li><strong>Patient Demographics:</strong> Name, DOB, MRN (as required)</li>
+            <li><strong>Any other required fields:</strong> Depends on your LIS integration</li>
+        </ul>
+
+        <p><strong>Then:</strong> Click "Submit"</p>
+
+        <p><strong>For Detailed Instructions:</strong> Refer to Section 7.9.1 "Setting up Sample Analysis Orders"</p>
+
+        <p><strong>Why This Step Matters:</strong> Proper sample tracking and data management; ensures results are linked to correct patient.</p>
+    </div>
+
+    <div class="procedure-flow" style="background: #e8f5e9; border: 2px solid #4caf50;">
+        <span class="step-number">4</span>
+        <h4>Place Samples and Normal Plasma in Tube Racks 🎯 CRITICAL STEP</h4>
+
+        <p><strong>This is the most important step - here's why and how:</strong></p>
+
+        <p><strong>What to do:</strong></p>
+        <ol style="margin-left: 20px; margin-top: 10px;">
+            <li>Place <strong>patient samples</strong> in designated tube rack positions</li>
+            <li>Place <strong>normal plasma</strong> in specified tube position(s) in same rack</li>
+        </ol>
+
+        <p><strong>How to Know Where to Put Normal Plasma:</strong></p>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li><strong>From Manual:</strong> "When you have selected a mixing test on the 'Sample Orders' screen, the sample position for placing the normal plasma displays on the screen."</li>
+            <li>The analyzer software will SHOW you exactly which position to place normal plasma</li>
+            <li>Don't guess - follow what the screen shows</li>
+        </ul>
+
+        <p><strong>Example Layout (Typical):</strong></p>
+        <table class="table">
+            <tr>
+                <th>Tube Position</th>
+                <th>Sample Type</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td>Position 1</td>
+                <td>Patient Sample 1</td>
+                <td>Prolonged PT/APPT needing mixing study</td>
+            </tr>
+            <tr>
+                <td>Position 2</td>
+                <td>NORMAL PLASMA</td>
+                <td>Reference plasma (prepared earlier)</td>
+            </tr>
+            <tr>
+                <td>Position 3</td>
+                <td>Patient Sample 2</td>
+                <td>Another patient if doing multiple mixes</td>
+            </tr>
+            <tr>
+                <td>Position 4</td>
+                <td>NORMAL PLASMA</td>
+                <td>Reference plasma for Sample 2</td>
+            </tr>
+        </table>
+
+        <p><strong>CRITICAL FROM MANUAL:</strong> "Place the patient samples in the tube racks, and place the normal plasma into the specified tube position in the tube rack."</p>
+
+        <p><strong>Why This Placement Matters:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Analyzer needs to know exact location of each sample</li>
+            <li>Normal plasma must be accessible for automated mixing</li>
+            <li>Wrong placement = sample aspiration error = test failure</li>
+        </ul>
+    </div>
+
+    <div class="procedure-flow">
+        <span class="step-number">5</span>
+        <h4>Follow Standard Analysis Protocol</h4>
+
+        <p><strong>What to do:</strong> Start the analysis using standard procedure</p>
+
+        <p><strong>From Manual:</strong> "Follow standard analysis protocol to perform analysis. Refer to 7.10 Starting Sample Analysis."</p>
+
+        <p><strong>This Includes:</strong></p>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>Click "Start" button on software</li>
+            <li>Analyzer begins sample transportation and analysis</li>
+            <li>Mixing occurs automatically per analyzer's protocol</li>
+            <li>Results are generated automatically</li>
+        </ul>
+
+        <p><strong>What Happens Next (Automated by CX-6000):</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Analyzer aspirates patient sample → tests baseline clotting time (APPT1)</li>
+            <li>Analyzer mixes patient + normal plasma at specified ratio</li>
+            <li>Analyzer tests mixed sample → gets mixed clotting time (APPT2/3)</li>
+            <li>If incubated mixing: incubates at 37°C, then tests again (APPT6/7)</li>
+            <li>Analyzer calculates correction indices automatically</li>
+            <li>Generates automatic interpretation</li>
+        </ul>
+
+        <p><strong>Why This Step Matters:</strong> Lets the analyzer do what it's designed for - fully automated mixing study from start to finish.</p>
+    </div>
+</div>
+
+<!-- AUTOMATED PROCESS EXPLANATION -->
+<div class="section">
+    <h2>What CX-6000 Automation Does During Mixing Test</h2>
+
+    <h3>Behind-the-Scenes Analyzer Operations (Automatic)</h3>
+
+    <p>Once you press "Start", the CX-6000 does all of this automatically:</p>
+
+    <div class="step-box">
+        <h4>Step 1: Patient Baseline Test</h4>
+        <ul style="margin-left: 20px;">
+            <li>Aspirates patient sample from specified position</li>
+            <li>Transfers to reaction cuvette</li>
+            <li>Adds APPT reagent (partial thromboplastin)</li>
+            <li>Measures clotting time at 405nm absorbance</li>
+            <li>Result = APPT1 (patient baseline)</li>
+        </ul>
+    </div>
+
+    <div class="step-box">
+        <h4>Step 2: Mix Preparation</h4>
+        <ul style="margin-left: 20px;">
+            <li>Aspirates patient sample (portion)</li>
+            <li>Aspirates normal plasma (portion)</li>
+            <li>Mixes at exact 1:1 ratio (50% + 50%)</li>
+            <li>Precise automation = no human error</li>
+        </ul>
+    </div>
+
+    <div class="step-box">
+        <h4>Step 3: Immediate Mix Test</h4>
+        <ul style="margin-left: 20px;">
+            <li>Tests mixed plasma immediately (within minutes)</li>
+            <li>Adds APPT reagent to fresh mix</li>
+            <li>Measures clotting time</li>
+            <li>Results = APPT2, APPT3 (duplicate measurements)</li>
+            <li>Compares with APPT1 → calculates CORRECTION</li>
+        </ul>
+    </div>
+
+    <div class="step-box">
+        <h4>Step 4: Incubation (If Configured)</h4>
+        <ul style="margin-left: 20px;">
+            <li>Remaining mixed plasma placed in incubator</li>
+            <li>Temperature: 37°C (body temperature)</li>
+            <li>Time: Configurable (typically 30-120 minutes)</li>
+            <li>Awaits post-incubation testing</li>
+        </ul>
+    </div>
+
+    <div class="step-box">
+        <h4>Step 5: Post-Incubation Test (If Enabled)</h4>
+        <ul style="margin-left: 20px;">
+            <li>After incubation time completes</li>
+            <li>Tests incubated mixed plasma</li>
+            <li>Results = APPT6, APPT7 (duplicate post-incubation)</li>
+            <li>Compares with immediate mix → detects time-dependent effects</li>
+        </ul>
+    </div>
+
+    <div class="step-box">
+        <h4>Step 6: Automatic Calculation & Interpretation</h4>
+        <ul style="margin-left: 20px;">
+            <li>Calculates Correction Index (RI_CT)</li>
+            <li>Calculates Post-Incubation Index (RI_ICT)</li>
+            <li>Generates automatic diagnosis</li>
+            <li>Compares against predefined thresholds</li>
+            <li>Flags abnormal patterns</li>
+        </ul>
+    </div>
+</div>
+
+<!-- APPT1-APPT7 DETAILED EXPLANATION -->
+<div class="section">
+    <h2>APPT Measurements Explained: APPT1 Through APPT7</h2>
+
+    <h3>The Complete Sequence of APPT Tests During Mixing Study</h3>
+
+    <p>During a CX-6000 mixing study, the analyzer performs multiple APPT measurements at different stages. Each measurement has a specific purpose and name. Understanding what each one represents is critical for interpreting results correctly.</p>
+
+    <div class="note-box">
+        <strong>Key Principle:</strong> The numbering (APPT1, APPT2, etc.) represents the SEQUENCE and TIMING of tests, not the patient. All tests are on the SAME patient sample in different states (patient baseline, immediately after mixing, after incubation, etc.).
+    </div>
+
+    <!-- APPT1 -->
+    <div class="step-box">
+        <h4>🔴 APPT1: Patient Baseline (Initial Test)</h4>
+
+        <p><strong>When it happens:</strong> FIRST test, at very beginning of mixing study</p>
+
+        <p><strong>What it measures:</strong> Patient's own plasma APPT value WITHOUT any mixing</p>
+
+        <p><strong>How it's done:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Analyzer aspirates 150 µL of pure patient plasma</li>
+            <li>Heats to 37°C</li>
+            <li>Adds APPT reagent (partial thromboplastin + calcium)</li>
+            <li>Measures time until fibrin formation detected at 405nm</li>
+        </ul>
+
+        <p><strong>Typical values:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Normal patient: 25-35 seconds</li>
+            <li>Prolonged (why mixing study ordered): > 40 seconds</li>
+        </ul>
+
+        <p><strong>Clinical meaning:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Confirms APPT is abnormally prolonged</li>
+            <li>Serves as reference baseline for all later comparisons</li>
+            <li>If APPT1 is normal but study ordered anyway: may indicate previous test error or patient condition changed</li>
+        </ul>
+
+        <p><strong>Example (Hemophilia A):</strong> Patient's APPT1 = 65 seconds (VERY prolonged - red flag for deficiency or inhibitor)</p>
+    </div>
+
+    <!-- APPT2 -->
+    <div class="step-box">
+        <h4>🟡 APPT2: Immediate Mix Test #1 (First Test After Mixing)</h4>
+
+        <p><strong>When it happens:</strong> Within 2-5 minutes after creating 1:1 mix of patient + normal plasma</p>
+
+        <p><strong>What it measures:</strong> APPT of freshly mixed sample (immediate correction test)</p>
+
+        <p><strong>How it's done:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Analyzer mixes exactly 50% patient plasma + 50% normal plasma (precise 1:1 ratio)</li>
+            <li>Tests the fresh mix immediately (no waiting, no incubation yet)</li>
+            <li>Adds APPT reagent to the mixed sample</li>
+            <li>Measures clotting time at 405nm</li>
+        </ul>
+
+        <p><strong>Typical values:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>If corrects (deficiency): Returns to NORMAL range (25-35 sec)</li>
+            <li>If doesn't correct (inhibitor): Stays prolonged (>40 sec)</li>
+        </ul>
+
+        <p><strong>Clinical meaning:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>First clue about whether patient has deficiency or inhibitor</li>
+            <li>If much shorter than APPT1 → suggests deficiency (mixing helps)</li>
+            <li>If similar to APPT1 → suggests inhibitor (mixing doesn't help)</li>
+        </ul>
+
+        <p><strong>Example (Hemophilia A):</strong> APPT2 = 35 seconds (improved from 65! → suggests deficiency)</p>
+        <p><strong>Example (Lupus LA):</strong> APPT2 = 55 seconds (barely improved from 62 → suggests inhibitor)</p>
+    </div>
+
+    <!-- APPT3 -->
+    <div class="step-box">
+        <h4>🟡 APPT3: Immediate Mix Test #2 (Quality Control Duplicate)</h4>
+
+        <p><strong>When it happens:</strong> Immediately after APPT2 (within seconds)</p>
+
+        <p><strong>What it measures:</strong> REPEAT of APPT2 (same mixed sample, tested again)</p>
+
+        <p><strong>How it's done:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Tests the SAME fresh mix again</li>
+            <li>Ensures reproducibility of results</li>
+            <li>CV (coefficient of variation) should be < 5%</li>
+        </ul>
+
+        <p><strong>Why two tests (APPT2 and APPT3)?</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Quality control - confirms APPT2 result wasn't a fluke</li>
+            <li>If APPT2 and APPT3 don't match closely → analyzer flags error</li>
+            <li>Professional standard: all coagulation tests done in duplicate</li>
+        </ul>
+
+        <p><strong>Typical values:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Should be VERY similar to APPT2 (within 1-2 seconds)</li>
+            <li>Example: APPT2 = 35 sec, APPT3 = 36 sec (excellent reproducibility)</li>
+        </ul>
+
+        <p><strong>Clinical meaning:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Confirms the immediate mix result is reliable</li>
+            <li>If APPT2 and APPT3 differ > 5%: investigate sample quality or analyzer issue</li>
+        </ul>
+
+        <p><strong>Used in calculations:</strong> Both APPT2 and APPT3 are averaged to calculate Correction Index (RI_CT)</p>
+    </div>
+
+    <!-- INCUBATION PERIOD -->
+    <div class="step-box" style="background: linear-gradient(135deg, #fff3cd 0%, #fffacd 100%); border-left: 4px solid #ffc107;">
+        <h4>⏱️ INCUBATION PERIOD (Between APPT3 and APPT6)</h4>
+
+        <p><strong>What happens:</strong> Remaining mixed plasma placed in incubator (NOT tested)</p>
+
+        <p><strong>Duration:</strong> Configurable, typically 30-120 minutes at 37°C</p>
+
+        <p><strong>Temperature:</strong> Exactly 37°C (body temperature) ± 0.2°C precision</p>
+
+        <p><strong>Purpose:</strong> Allows time-dependent inhibitors to activate/develop</p>
+
+        <p><strong>Why this is critical:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Factor VIII antibodies don't activate instantly</li>
+            <li>At room temperature: antibodies may be inactive</li>
+            <li>At 37°C for extended time: antibodies fully activate</li>
+            <li>This is why CX-9000's 120-minute incubation catches what 15-minute competitors miss!</li>
+        </ul>
+
+        <p><strong>No APPT tests during incubation:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Incubation period is WAITING period</li>
+            <li>Next tests (APPT6/7) happen AFTER incubation completes</li>
+        </ul>
+    </div>
+
+    <!-- APPT6 -->
+    <div class="step-box">
+        <h4>🔵 APPT6: Post-Incubation Test #1 (After Incubation)</h4>
+
+        <p><strong>When it happens:</strong> AFTER incubation period completes (e.g., after 120 minutes at 37°C)</p>
+
+        <p><strong>What it measures:</strong> APPT of the SAME mixed sample after it's been warmed and given time for inhibitor activation</p>
+
+        <p><strong>How it's done:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Removes mixed plasma from incubator</li>
+            <li>Adds fresh APPT reagent</li>
+            <li>Tests the now-incubated mixed sample</li>
+            <li>Measures clotting time at 405nm</li>
+        </ul>
+
+        <p><strong>Typical values:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>If NO time-dependent inhibitor: Similar to APPT2/3 (deficiency stays corrected)</li>
+            <li>If TIME-DEPENDENT INHIBITOR present: MUCH WORSE (longer) than APPT2/3 (correction is lost!)</li>
+        </ul>
+
+        <p><strong>Clinical meaning:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li><strong>If APPT6 ≈ APPT2/3:</strong> No time-dependent effect, patient likely has simple factor deficiency</li>
+            <li><strong>If APPT6 >> APPT2/3 (significantly worse):</strong> Time-dependent inhibitor detected! Antibodies developed during incubation and inactivated normal factors</li>
+        </ul>
+
+        <p><strong>Example (Hemophilia A with Developing Factor VIII Antibodies):</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>APPT1 (patient): 58 seconds</li>
+            <li>APPT2/3 (immediate mix): 38 seconds (looked corrected!)</li>
+            <li>APPT6 (after 120-min incubation): 48 seconds (WORSENED by 10 seconds!)</li>
+            <li>Diagnosis: TIME-DEPENDENT INHIBITOR (developing antibody)</li>
+        </ul>
+    </div>
+
+    <!-- APPT7 -->
+    <div class="step-box">
+        <h4>🔵 APPT7: Post-Incubation Test #2 (Quality Control Duplicate)</h4>
+
+        <p><strong>When it happens:</strong> Immediately after APPT6</p>
+
+        <p><strong>What it measures:</strong> REPEAT of APPT6 (same incubated sample, tested again)</p>
+
+        <p><strong>How it's done:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Tests the SAME incubated mix again</li>
+            <li>Ensures reproducibility of post-incubation result</li>
+            <li>CV should be < 5%</li>
+        </ul>
+
+        <p><strong>Why two tests (APPT6 and APPT7)?</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Quality control - confirms APPT6 result</li>
+            <li>If APPT6 and APPT7 don't match: error flag</li>
+            <li>Post-incubation samples may be more prone to variability</li>
+        </ul>
+
+        <p><strong>Typical values:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Should match APPT6 closely (within 1-2 seconds)</li>
+            <li>Example: APPT6 = 48 sec, APPT7 = 50 sec</li>
+        </ul>
+
+        <p><strong>Used in calculations:</strong> Both APPT6 and APPT7 averaged to calculate Post-Incubation Correction Index (RI_ICT)</p>
+    </div>
+
+    <!-- SUMMARY TABLE -->
+    <h3>Complete APPT1-7 Sequence - Official Definition Table</h3>
+
+    <table class="table">
+        <tr>
+            <th>Test #</th>
+            <th>Sample Composition</th>
+            <th>Incubation</th>
+            <th>Test Timing</th>
+            <th>Purpose</th>
+            <th>Expected Value (seconds)</th>
+        </tr>
+        <tr>
+            <td><strong>APPT1</strong></td>
+            <td>Patient Plasma (PP) alone</td>
+            <td>None</td>
+            <td>Immediately</td>
+            <td>Patient baseline clotting time</td>
+            <td>25-35 sec (normal) or >40 sec (prolonged)</td>
+        </tr>
+        <tr>
+            <td><strong>APPT2</strong></td>
+            <td>Normal Pooled Plasma (NPP) alone</td>
+            <td>None</td>
+            <td>Immediately</td>
+            <td>Normal plasma baseline QC</td>
+            <td>25-35 sec (must be normal range)</td>
+        </tr>
+        <tr>
+            <td><strong>APPT3</strong></td>
+            <td>PP + NPP 1:1 fresh mix</td>
+            <td>None - test fresh</td>
+            <td>Immediately after mixing</td>
+            <td>Immediate correction test (RI_CT calculation)</td>
+            <td>Normal IF corrects, prolonged IF doesn't correct</td>
+        </tr>
+        <tr>
+            <td><strong>APPT4</strong></td>
+            <td>Patient Plasma (PP) alone</td>
+            <td>37°C for 2 hours</td>
+            <td>Test after incubation</td>
+            <td>Time-dependent effect on patient sample</td>
+            <td>May change if inhibitor is time-dependent</td>
+        </tr>
+        <tr>
+            <td><strong>APPT5</strong></td>
+            <td>Normal Pooled Plasma (NPP) alone</td>
+            <td>37°C for 2 hours</td>
+            <td>Test after incubation</td>
+            <td>Time-dependent effect on normal sample (reference)</td>
+            <td>Should remain in normal range</td>
+        </tr>
+        <tr style="background: #ffffcc;">
+            <td><strong>APPT6</strong></td>
+            <td><strong>PP + NPP 1:1 THEN incubated</strong></td>
+            <td><strong>37°C for 2 hours AFTER mixing</strong></td>
+            <td><strong>Test immediately after incubation</strong></td>
+            <td><strong>Post-incubation correction (fresh mix then incubated)</strong></td>
+            <td><strong>Changes if time-dependent inhibitor present</strong></td>
+        </tr>
+        <tr style="background: #ffffcc;">
+            <td><strong>APPT7</strong></td>
+            <td><strong>Incubated PP + Incubated NPP 1:1 mixed</strong></td>
+            <td><strong>37°C for 2 hours SEPARATELY, then mixed</strong></td>
+            <td><strong>Test immediately after mixing incubated samples</strong></td>
+            <td><strong>Post-incubation correction (incubate then mix)</strong></td>
+            <td><strong>Tests inhibitor development after separate incubation</strong></td>
+        </tr>
+    </table>
+
+    <div class="note-box" style="margin-top: 20px;">
+        <strong>🔑 Key Difference - APPT6 vs APPT7:</strong>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li><strong>APPT6:</strong> Mix THEN incubate - tests the effect on mixed plasma</li>
+            <li><strong>APPT7:</strong> Incubate THEN mix - tests the effect on individual samples that are incubated separately</li>
+            <li>Comparing APPT6 and APPT7 reveals different inhibitor activation patterns</li>
+        </ul>
+    </div>
+
+    <!-- RI_CT AND RI_ICT DEFINITIONS -->
+    <h3>Understanding RI_CT and RI_ICT - What Do These Abbreviations Mean?</h3>
+
+    <div class="note-box">
+        <h4>📌 Abbreviation Breakdown</h4>
+        <p><strong>RI</strong> = <strong>Ratio Index</strong> (measures the ratio/percentage of correction)</p>
+        <p><strong>CT</strong> = <strong>Correction Test</strong> (immediate testing with fresh mix)</p>
+        <p><strong>ICT</strong> = <strong>Incubation Correction Test</strong> (testing after 37°C incubation)</p>
+    </div>
+
+    <div class="requirement-box">
+        <h4>🔍 RI_CT - Immediate Correction Test</h4>
+        <p><strong>What it measures:</strong> The percentage correction when fresh patient plasma is mixed 1:1 with normal plasma and tested IMMEDIATELY (no incubation)</p>
+        <p><strong>Clinical purpose:</strong> Quick screening to detect immediate-acting inhibitors and factor deficiencies</p>
+        <p><strong>Timing:</strong> Test within 2-5 minutes of mixing</p>
+        <p><strong>What it tells you:</strong> Does mixing IMMEDIATELY improve the clotting time?</p>
+    </div>
+
+    <div class="requirement-box">
+        <h4>🔍 RI_ICT - Incubation Correction Test</h4>
+        <p><strong>What it measures:</strong> The percentage correction after the mixed plasma has been incubated at 37°C for 2 hours</p>
+        <p><strong>Clinical purpose:</strong> Deep diagnosis to detect time-dependent inhibitors that develop during heating</p>
+        <p><strong>Timing:</strong> Test AFTER 37°C/2-hour incubation</p>
+        <p><strong>What it tells you:</strong> Does the correction PERSIST after heating, or does it WORSEN?</p>
+    </div>
+
+    <h3>Why Two Different Tests?</h3>
+
+    <table class="table">
+        <tr>
+            <th>Test</th>
+            <th>When Done</th>
+            <th>What It Detects</th>
+            <th>Clinical Use</th>
+        </tr>
+        <tr>
+            <td><strong>RI_CT</strong><br>(Immediate)</td>
+            <td>Fresh mix, tested immediately</td>
+            <td>Immediate-acting inhibitors<br>Factor deficiencies</td>
+            <td>First-line screening</td>
+        </tr>
+        <tr>
+            <td><strong>RI_ICT</strong><br>(Post-Incubation)</td>
+            <td>After 37°C/2hr incubation</td>
+            <td>Time-dependent inhibitors<br>(developing antibodies)</td>
+            <td>Catches developing Factor VIII inhibitors</td>
+        </tr>
+    </table>
+
+    <!-- KEY CALCULATIONS - OFFICIAL FORMULAS -->
+    <h3>Official Calculation Formulas (From Mindray)</h3>
+
+    <div class="highlight">
+        <h4>✅ Official Formulas from Mindray Presentation</h4>
+        <p>These are the OFFICIAL formulas used by Mindray for the CX-9000 mixing study calculations:</p>
+    </div>
+
+    <div class="requirement-box">
+        <h4>Formula 1: RI_CT (Immediate Correction Index)</h4>
+        <p><strong>Calculation for APPT3 (Immediate Mix Test):</strong></p>
+        <div style="background: white; padding: 15px; border-radius: 5px; margin: 10px 0; font-family: monospace; font-size: 14px;">
+            <strong>RI_CT = [(APPT3 - APPT2) / APPT1] × 100%</strong>
+        </div>
+        <p><strong>Where:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li><strong>APPT1</strong> = Patient plasma baseline (denominator/reference)</li>
+            <li><strong>APPT2</strong> = Normal plasma baseline (subtracted as reference)</li>
+            <li><strong>APPT3</strong> = Fresh 1:1 mix (numerator/test result)</li>
+        </ul>
+        <p><strong>Threshold:</strong> <strong style="color: red;">11%</strong></p>
+        <p><strong>Interpretation:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li><strong>RI_CT < 11%:</strong> Small correction → ✅ <strong>FACTOR DEFICIENCY</strong></li>
+            <li><strong>RI_CT > 11%:</strong> Large correction → ❌ <strong>INHIBITOR PRESENT</strong></li>
+        </ul>
+    </div>
+
+    <div class="requirement-box">
+        <h4>Formula 2: RI_ICT (Post-Incubation Correction Index)</h4>
+        <p><strong>Calculation for APPT6 (After Incubation - Mix Then Incubate):</strong></p>
+        <div style="background: white; padding: 15px; border-radius: 5px; margin: 10px 0; font-family: monospace; font-size: 14px;">
+            <strong>RI_ICT = [(APPT6 - APPT5) / APPT4] × 100%</strong>
+        </div>
+        <p><strong>Where:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li><strong>APPT4</strong> = Incubated patient plasma (denominator/reference after heating)</li>
+            <li><strong>APPT5</strong> = Incubated normal plasma (subtracted as reference after heating)</li>
+            <li><strong>APPT6</strong> = Incubated 1:1 mix (numerator/test result after heating)</li>
+        </ul>
+        <p><strong>Threshold:</strong> <strong style="color: red;">11%</strong></p>
+        <p><strong>Additional Check - Time-Temperature Dependency:</strong></p>
+        <div style="background: #fff3cd; padding: 10px; border-radius: 5px; margin: 10px 0; font-family: monospace;">
+            <strong>Δ APPT = APPT7 - APPT6</strong><br>
+            <strong>If Δ APPT > 3 seconds:</strong> Time-dependent inhibitor present
+        </div>
+        <p><strong>Interpretation:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li><strong>RI_ICT < 11% & Δ APPT ≤ 3s:</strong> ✅ <strong>FACTOR DEFICIENCY</strong> (stays corrected)</li>
+            <li><strong>RI_ICT > 11% & Δ APPT > 3s:</strong> 🔴 <strong>TIME-DEPENDENT INHIBITOR</strong> (worsens after incubation)</li>
+            <li><strong>RI_ICT > 11% & Δ APPT ≤ 3s:</strong> ❌ <strong>NON-TIME-DEPENDENT INHIBITOR</strong> (immediate-acting)</li>
+        </ul>
+    </div>
+
+    <div class="requirement-box">
+        <h4>Time-Dependent Assessment</h4>
+        <div style="background: white; padding: 15px; border-radius: 5px; margin: 10px 0; font-family: monospace;">
+            <strong>Δ APPT = APPT6/7 - APPT2/3</strong>
+        </div>
+        <p><strong>What it measures:</strong> How much the result CHANGED after incubation</p>
+        <p><strong>Interpretation:</strong></p>
+        <ul style="margin-left: 20px;">
+            <li>Δ APPT < 3 seconds: NO time-dependent effect (normal pattern)</li>
+            <li>Δ APPT > 3 seconds WORSE: SIGNIFICANT time-dependent inhibitor (critical finding!)</li>
+        </ul>
+        <p><strong>Example:</strong> APPT2/3 = 38 sec, APPT6/7 = 50 sec → Δ APPT = 12 sec (much worse!) → TIME-DEPENDENT INHIBITOR DETECTED</p>
+    </div>
+
+    <!-- CLINICAL EXAMPLE -->
+    <h3>Complete Example: All APPT Values in Real Case</h3>
+
+    <div class="clinical-example">
+        <h4>Case: Hemophilia A Patient (Factor VIII Deficiency)</h4>
+        <ul style="margin-left: 20px;">
+            <li><strong>APPT1:</strong> 65 seconds (patient alone - very prolonged)</li>
+            <li><strong>APPT2:</strong> 35 seconds (immediate mix test 1)</li>
+            <li><strong>APPT3:</strong> 36 seconds (immediate mix test 2)</li>
+            <li><strong>RI_CT:</strong> 46% (CORRECTS - > 11%)</li>
+            <li><strong>Incubation:</strong> 120 minutes at 37°C</li>
+            <li><strong>APPT6:</strong> 35 seconds (post-incubation test 1)</li>
+            <li><strong>APPT7:</strong> 37 seconds (post-incubation test 2)</li>
+            <li><strong>RI_ICT:</strong> 43% (STAYS CORRECTED - > 11%)</li>
+            <li><strong>Δ APPT:</strong> 1 second (NO worsening - normal pattern)</li>
+            <li><strong>FINAL DIAGNOSIS:</strong> ✅ FACTOR DEFICIENCY (Hemophilia A)</li>
+        </ul>
+    </div>
+
+    <div class="clinical-example" style="background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);">
+        <h4>Case: Developing Factor VIII Inhibitor (Time-Dependent)</h4>
+        <ul style="margin-left: 20px;">
+            <li><strong>APPT1:</strong> 58 seconds (patient alone - prolonged)</li>
+            <li><strong>APPT2:</strong> 38 seconds (immediate mix - LOOKS CORRECTED!)</li>
+            <li><strong>APPT3:</strong> 39 seconds (immediate mix repeat)</li>
+            <li><strong>RI_CT:</strong> 34% (CORRECTS - > 11%)</li>
+            <li><strong>Incubation:</strong> 120 minutes at 37°C (antibodies activate!)</li>
+            <li><strong>APPT6:</strong> 48 seconds (post-incubation - MUCH WORSE!)</li>
+            <li><strong>APPT7:</strong> 50 seconds (post-incubation repeat)</li>
+            <li><strong>RI_ICT:</strong> 14% (LOST CORRECTION - < 11%)</li>
+            <li><strong>Δ APPT:</strong> 11 seconds (SIGNIFICANTLY WORSE after incubation)</li>
+            <li><strong>FINAL DIAGNOSIS:</strong> 🔴 TIME-DEPENDENT INHIBITOR (Developing Factor VIII Antibody) - URGENT!</li>
+        </ul>
+    </div>
+</div>
+
+<!-- INTERPRETATION SUMMARY -->
+<div class="section">
+    <h2>Understanding Mixing Test Results</h2>
+
+    <h3>What The Analyzer Shows You</h3>
+
+    <table class="table">
+        <tr>
+            <th>Test Result</th>
+            <th>What It Means</th>
+            <th>Clinical Interpretation</th>
+        </tr>
+        <tr>
+            <td><strong>Mix CORRECTS</strong><br>(APPT2/3 much shorter than APPT1)</td>
+            <td>Clotting improved significantly after mixing</td>
+            <td>✅ Factor Deficiency<br>(deficiency is "fixed" by adding normal plasma)</td>
+        </tr>
+        <tr>
+            <td><strong>Mix DOES NOT CORRECT</strong><br>(APPT2/3 still prolonged like APPT1)</td>
+            <td>Clotting did NOT improve after mixing</td>
+            <td>❌ Inhibitor Present<br>(inhibitor attacks newly added normal factors)</td>
+        </tr>
+        <tr>
+            <td><strong>Mix CORRECTS then WORSENS</strong><br>(APPT2/3 corrected, but APPT6/7 much worse)</td>
+            <td>Immediate mix looked OK, but after 37°C incubation it worsened</td>
+            <td>🔴 Time-Dependent Inhibitor<br>(antibodies activate during incubation)</td>
+        </tr>
+        <tr>
+            <td><strong>Partial Correction</strong><br>(Improvement but not complete)</td>
+            <td>Partial improvement suggests mixed situation</td>
+            <td>⚠️ Combined Defect<br>(both deficiency AND inhibitor present)</td>
+        </tr>
+    </table>
+
+    <h3>Next Clinical Steps (After Results)</h3>
+
+    <p><strong>Based on Mixing Test Results, Physician Orders:</strong></p>
+
+    <ul style="margin-left: 20px;">
+        <li><strong>If Deficiency:</strong> Specific factor assays (Factor VIII, Factor IX, etc.) to quantify deficiency level</li>
+        <li><strong>If Inhibitor:</strong> Specific inhibitor testing (Lupus LA, Factor inhibitor titer, etc.)</li>
+        <li><strong>If Time-Dependent:</strong> URGENT inhibitor titer to quantify and guide therapy</li>
+        <li><strong>If Combined:</strong> Both factor assay AND inhibitor testing</li>
+    </ul>
+</div>
+
+<!-- PRACTICAL TIPS -->
+<div class="section">
+    <h2>Practical Tips from the Manual & Best Practices</h2>
+
+    <h3>Critical Do's ✓</h3>
+    <div class="checklist">
+        <ul>
+            <li>DO use fresh normal plasma when possible</li>
+            <li>DO verify normal plasma QC before using thawed samples</li>
+            <li>DO follow the analyzer's screen display for normal plasma placement</li>
+            <li>DO ensure proper sample quality (no hemolysis/lipemia/icterus)</li>
+            <li>DO use minimum 20 donor samples for preparing pooled plasma</li>
+            <li>DO thaw frozen plasma at 37°C for 5-10 minutes</li>
+            <li>DO slightly invert (mix) thawed vials before using</li>
+            <li>DO configure test parameters BEFORE starting analysis</li>
+        </ul>
+    </div>
+
+    <h3>Critical Don'ts ✗</h3>
+    <div class="warning-box">
+        <ul style="margin-left: 20px;">
+            <li>❌ DON'T use hemolyzed, icteric, or lipemic normal plasma</li>
+            <li>❌ DON'T repeatedly freeze and thaw normal plasma</li>
+            <li>❌ DON'T skip QC testing of thawed normal plasma</li>
+            <li>❌ DON'T place normal plasma in wrong tube position</li>
+            <li>❌ DON'T start analysis without confirming test parameters</li>
+            <li>❌ DON'T use incomplete or damaged sample tubes</li>
+            <li>❌ DON'T ignore analyzer error messages</li>
+            <li>❌ DON'T proceed if normal plasma QC fails</li>
+        </ul>
+    </div>
+
+    <h3>Troubleshooting Common Issues</h3>
+
+    <table class="table">
+        <tr>
+            <th>Problem</th>
+            <th>Likely Cause</th>
+            <th>Solution</th>
+        </tr>
+        <tr>
+            <td>Mixing test fails to start</td>
+            <td>Test not enabled in parameters</td>
+            <td>Go to Settings → Test Para. and enable mixing tests</td>
+        </tr>
+        <tr>
+            <td>Analyzer says "no normal plasma found"</td>
+            <td>Normal plasma in wrong position</td>
+            <td>Check screen display for correct position, move tube</td>
+        </tr>
+        <tr>
+            <td>Mix results don't make sense</td>
+            <td>Normal plasma quality issue</td>
+            <td>Re-QC normal plasma, recollect if needed</td>
+        </tr>
+        <tr>
+            <td>Mix test aborted mid-run</td>
+            <td>Sample quality problem</td>
+            <td>Inspect sample, recollect if hemolyzed</td>
+        </tr>
+        <tr>
+            <td>Incubated test shows error</td>
+            <td>Temperature fluctuation in incubator</td>
+            <td>Check analyzer temperature, perform maintenance</td>
+        </tr>
+    </table>
+</div>
+
+<!-- SUMMARY FLOWCHART -->
+<div class="section">
+    <h2>Complete Mixing Test Workflow (From Start to Finish)</h2>
+
+    <div class="procedure-flow">
+        <p style="text-align: center; font-family: monospace; line-height: 2;">
+START<br>
+↓<br>
+SECTION 7.13.1: Prepare Normal Plasma<br>
+├─ Collect from 20+ healthy donors, OR use commercial<br>
+├─ Verify ALL coagulation factors 80%-120%<br>
+├─ Ensure NO hemolysis, icterus, lipemia<br>
+├─ If frozen: thaw 5-10 min at 37°C, mix gently<br>
+└─ QC test thawed plasma (must be normal)<br>
+↓<br>
+SECTION 7.13.2: Prepare Patient Samples<br>
+├─ Standard collection in citrate tubes<br>
+├─ Verify good quality (no hemolysis/clots)<br>
+└─ Label and identify correctly<br>
+↓<br>
+SECTION 7.13.3: Configure & Start Mixing Tests<br>
+├─ Step 1: Settings → Test Para. (enable mixing tests)<br>
+├─ Step 2: Select mixing test on Sample Orders<br>
+├─ Step 3: Enter sample info, submit<br>
+├─ Step 4: Place patient sample + normal plasma in rack<br>
+│         (at positions shown on screen)<br>
+└─ Step 5: Start analysis (7.10)<br>
+↓<br>
+ANALYZER RUNS AUTOMATICALLY<br>
+├─ APPT1: Tests patient sample baseline<br>
+├─ Mix: Creates 1:1 patient + normal plasma mix<br>
+├─ APPT2/3: Tests immediate mix → calculates correction<br>
+├─ Incubation: Holds mix at 37°C (if configured)<br>
+├─ APPT6/7: Tests after incubation → detects time-dependent<br>
+└─ Auto-diagnosis: Generates final interpretation<br>
+↓<br>
+REVIEW RESULTS (Section 8)<br>
+├─ Corrects → Factor deficiency<br>
+├─ Doesn't correct → Inhibitor<br>
+├─ Corrects then worsens → Time-dependent inhibitor<br>
+└─ Partial correction → Combined defect<br>
+↓<br>
+PHYSICIAN ORDERS FOLLOW-UP TESTS<br>
+├─ If deficiency: Factor assays<br>
+├─ If inhibitor: Inhibitor testing<br>
+├─ If time-dependent: URGENT inhibitor titer<br>
+└─ If combined: Both<br>
+↓<br>
+TREATMENT BASED ON DIAGNOSIS<br>
+END
+        </p>
+    </div>
+</div>
+
+<!-- FINAL NOTES -->
+<div class="section" style="background: linear-gradient(135deg, #065A82 0%, #1C7293 100%); color: white; border-left: none;">
+    <h2 style="color: white;">Key Takeaways from Section 7.13</h2>
+
+    <ul style="margin-left: 20px; margin-top: 15px; color: white;">
+        <li><strong>Quality of normal plasma is critical:</strong> Use fresh, QC-verified samples</li>
+        <li><strong>Proper sample placement is critical:</strong> Follow screen display exactly</li>
+        <li><strong>CX-6000 is fully automated:</strong> Once you press Start, it handles mixing automatically</li>
+        <li><strong>Interpretation is straightforward:</strong> Does it correct or not? Time-dependent or immediate?</li>
+        <li><strong>Follow-up testing is essential:</strong> Mixing test guides which confirmatory tests to order</li>
+        <li><strong>Patient safety depends on accuracy:</strong> Incorrect diagnosis leads to wrong treatment</li>
+    </ul>
+
+    <p style="margin-top: 25px; font-style: italic;">The mixing test is a screening tool that answers one critical question: "Does adding normal plasma improve the patient's clotting?" The answer directs all subsequent testing and treatment.</p>
+</div>
+
+</div>
+
+<div class="footer">
+    <p><strong>CX-6000/CX-6010 Operator's Manual - Section 7.13 Explained</strong></p>
+    <p>Complete Step-by-Step Breakdown with Clinical Context</p>
+    <p style="margin-top: 20px; color: #999;">Reference Guide | June 2026 | For Laboratory Professionals</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CX-Series - Product Summary & Technical Specifications</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; color: #333; line-height: 1.6; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #065A82 0%, #02C39A 100%); color: white; padding: 50px 20px; text-align: center; }
+        .header h1 { font-size: 42px; margin-bottom: 10px; }
+        .header p { font-size: 18px; opacity: 0.95; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .section { background: white; margin: 20px 0; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-left: 5px solid #065A82; }
+        .section h2 { color: #065A82; font-size: 28px; margin-bottom: 20px; }
+        .section h3 { color: #1C7293; font-size: 20px; margin-top: 25px; margin-bottom: 15px; }
+        .section h4 { color: #02C39A; font-size: 16px; margin-top: 15px; margin-bottom: 10px; font-weight: bold; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
+        .benefit-card { background: linear-gradient(135deg, #f0f8fb 0%, #f9f9f9 100%); padding: 20px; border-radius: 8px; border-left: 4px solid #02C39A; }
+        .benefit-card h4 { color: #065A82; margin-bottom: 10px; font-size: 16px; }
+        .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+        .model-box { background: linear-gradient(135deg, #f0f8fb 0%, #f9f9f9 100%); padding: 25px; border-radius: 8px; border: 2px solid #1C7293; }
+        .model-box h3 { margin-top: 0; color: #065A82; font-size: 20px; margin-bottom: 15px; }
+        .model-box ul { list-style: none; }
+        .model-box li { padding: 8px 0; padding-left: 25px; position: relative; }
+        .model-box li:before { content: "✓"; position: absolute; left: 0; color: #02C39A; font-weight: bold; }
+        .parameter-card { background: linear-gradient(135deg, #f0f8fb 0%, #e8f5e9 100%); border: 2px solid #1C7293; padding: 20px; margin: 15px 0; border-radius: 8px; }
+        .wavelength-box { background: linear-gradient(135deg, #fff3cd 0%, #fffacd 100%); padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #ffc107; }
+        .detection-method-box { background: #f0f8fb; border-left: 4px solid #02C39A; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .table th { background: #065A82; color: white; padding: 12px; text-align: left; font-weight: bold; }
+        .table td { padding: 12px; border-bottom: 1px solid #ddd; }
+        .table tr:nth-child(even) { background: #f9f9f9; }
+        .highlight { background: linear-gradient(135deg, #fff3cd 0%, #fffacd 100%); padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        .uv-vis { background: linear-gradient(to right, #9c27b0, #2196f3, #4caf50, #ffeb3b, #ff9800, #f44336); padding: 20px; margin: 20px 0; border-radius: 5px; color: white; text-align: center; font-weight: bold; }
+        .optical-principle { background: #e3f2fd; border-left: 4px solid #2196f3; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 14px; }
+        @media (max-width: 768px) { .comparison { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>CX-Series Auto Coagulation Analyzers</h1>
+    <p>Product Summary & Technical Specifications</p>
+</div>
+
+<div class="container">
+
+<!-- EXECUTIVE OVERVIEW -->
+<div class="section">
+    <h2>📋 Executive Overview</h2>
+    <p>The CX-Series comprises two high-throughput automated coagulation analyzers designed for hospital and reference laboratories. Both models provide comprehensive coagulation testing with advanced optical detection and clinical reliability.</p>
+
+    <div class="benefits-grid">
+        <div class="benefit-card">
+            <h4>🔬 7 Complete Parameters</h4>
+            <p>PT, APPT, Fibrinogen, Thrombin Time, D-Dimer, FDP, AT-III</p>
+        </div>
+        <div class="benefit-card">
+            <h4>⚡ 400-450 Tests/Hour</h4>
+            <p>High-throughput capability for busy laboratories</p>
+        </div>
+        <div class="benefit-card">
+            <h4>🔍 Advanced Optical Detection</h4>
+            <p>Multiple wavelengths, kinetic measurements, 2nd Derivative capability</p>
+        </div>
+        <div class="benefit-card">
+            <h4>📊 Automated Mixing Study</h4>
+            <p>7-step procedure with 120-minute incubation (CX-9000)</p>
+        </div>
+    </div>
+</div>
+
+<!-- CX-6000 vs CX-9000 COMPARISON -->
+<div class="section">
+    <h2>⚖️ CX-6000 vs CX-9000 Comparison</h2>
+
+    <div class="comparison">
+        <div class="model-box">
+            <h3>CX-6000 Standard Model</h3>
+            <ul>
+                <li>400 tests/hour throughput</li>
+                <li>3 optical wavelengths (405, 575, 660nm)</li>
+                <li>1st Derivative detection</li>
+                <li>Compact desktop design</li>
+                <li>Manual APPT mixing study</li>
+                <li>Cost-effective entry model</li>
+                <li>7 standard parameters</li>
+            </ul>
+        </div>
+        <div class="model-box">
+            <h3>CX-9000 Premium Model</h3>
+            <ul>
+                <li>450 tests/hour throughput</li>
+                <li>4 optical wavelengths (405, 545, 660, 800nm)</li>
+                <li>2nd Derivative detection (APPT)</li>
+                <li>Handles hemolytic samples (800nm NIR)</li>
+                <li>Automated 7-step mixing study</li>
+                <li>120-minute incubation capability</li>
+                <li>Advanced clinical diagnostics</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- OPTICAL DETECTION SYSTEM -->
+<div class="section">
+    <h2>🔬 Optical Detection System</h2>
+
+    <h3>Three Detection Methods Available</h3>
+
+    <div class="detection-method-box">
+        <h4>1. Threshold Detection</h4>
+        <p><strong>How:</strong> Detects when absorbance crosses a preset threshold | <strong>Speed:</strong> Fastest | <strong>Use:</strong> Quick screening</p>
+    </div>
+
+    <div class="detection-method-box">
+        <h4>2. 1st Derivative (Rate Detection)</h4>
+        <p><strong>How:</strong> Measures rate of absorbance change (dA/dt) | <strong>Sensitivity:</strong> High | <strong>Use:</strong> Standard coagulation testing</p>
+    </div>
+
+    <div class="detection-method-box">
+        <h4>3. 2nd Derivative (Acceleration Detection) ⭐ CX-9000 Only</h4>
+        <p><strong>How:</strong> Detects inflection point of fibrin polymerization (d²A/dt²) | <strong>Sensitivity:</strong> Very High | <strong>Use:</strong> APPT, mixed studies - catches subtle defects</p>
+    </div>
+
+    <h3>Wavelength Specifications</h3>
+
+    <div class="wavelength-box">
+        <strong>CX-6000 Optical Channels:</strong>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>405 nm (Violet) - Primary coagulation wavelength</li>
+            <li>575 nm (Yellow-Green) - Reference & artifact detection</li>
+            <li>660 nm (Red) - Extended range measurement</li>
+        </ul>
+    </div>
+
+    <div class="wavelength-box">
+        <strong>CX-9000 Optical Channels (Enhanced):</strong>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>405 nm (Violet) - Primary coagulation wavelength</li>
+            <li>545 nm (Green) - Optimized secondary measurement</li>
+            <li>660 nm (Red) - Extended range measurement</li>
+            <li>800 nm (Near-Infrared) - Hemolytic sample capability (EXCLUSIVE)</li>
+        </ul>
+    </div>
+
+    <div class="highlight">
+        <strong>CX-9000 Advantage:</strong> The 800nm near-infrared channel enables testing of hemolytic samples that would fail on competitor systems. This solves a real clinical problem and is NOT available on other analyzers.
+    </div>
+
+    <div class="uv-vis">
+        UV | VIOLET | BLUE | GREEN | YELLOW | ORANGE | RED | NIR
+    </div>
+
+    <h3>Why These Wavelengths?</h3>
+    <ul style="margin-left: 20px;">
+        <li><strong>405nm:</strong> Optimal fibrin absorbance peak - provides strongest optical contrast</li>
+        <li><strong>545-575nm:</strong> Reference wavelength to detect sample interference (hemolysis, lipemia, icterus)</li>
+        <li><strong>660nm:</strong> Extended measurement range for alternative assays</li>
+        <li><strong>800nm (CX-9000):</strong> Near-infrared provides superior penetration in hemolytic/icteric samples</li>
+    </ul>
+</div>
+
+<!-- PARAMETERS WITH DETECTION METHODS -->
+<div class="section">
+    <h2>🧪 Seven Parameters: Detection Methods & Wavelengths</h2>
+
+    <div class="parameter-card">
+        <h3>1. PT (Prothrombin Time)</h3>
+        <p><strong>Clinical:</strong> Extrinsic + common pathway (Factors VII, X, V, II)</p>
+        <p><strong>Detection Method:</strong> 1st Derivative | <strong>Normal Range:</strong> 10-13 seconds</p>
+        <div class="wavelength-box">
+            <strong>CX-6000:</strong> 405nm + 575nm reference<br>
+            <strong>CX-9000:</strong> 405nm + 545nm optimized
+        </div>
+        <p><strong>How It Works:</strong> Tissue Factor triggers extrinsic cascade → fibrin formation increases 405nm absorbance → 1st Derivative detects peak rate change</p>
+    </div>
+
+    <div class="parameter-card">
+        <h3>2. APPT (Activated Partial Thromboplastin Time)</h3>
+        <p><strong>Clinical:</strong> Intrinsic + common pathway (Factors XII, XI, IX, X, V, II)</p>
+        <p><strong>Detection Method:</strong> 2nd Derivative (CX-9000) / 1st Derivative (CX-6000) | <strong>Normal Range:</strong> 25-35 seconds</p>
+        <div class="wavelength-box">
+            <strong>CX-6000:</strong> 405nm + 660nm<br>
+            <strong>CX-9000:</strong> 405nm + 545nm + 800nm (hemolytic samples)
+        </div>
+        <p><strong>How It Works:</strong> Partial thromboplastin + activator → intrinsic pathway → 2nd Derivative detects earliest fibrin formation (most sensitive method)</p>
+        <p><strong>CX-9000 Advantage:</strong> 2nd Derivative catches mild clotting defects. 800nm handles hemolytic samples others fail on.</p>
+    </div>
+
+    <div class="parameter-card">
+        <h3>3. Fibrinogen</h3>
+        <p><strong>Clinical:</strong> Clotting factor I quantification (2-4 g/L normal)</p>
+        <p><strong>Detection Method:</strong> 1st Derivative | <strong>Measurement:</strong> Kinetic rate</p>
+        <div class="wavelength-box">
+            <strong>Both Models:</strong> 405nm primary measurement
+        </div>
+        <p><strong>How It Works:</strong> Direct thrombin converts fibrinogen to fibrin → 405nm absorbance rate = fibrinogen concentration</p>
+    </div>
+
+    <div class="parameter-card">
+        <h3>4. Thrombin Time (TT)</h3>
+        <p><strong>Clinical:</strong> Fibrinogen quality + quantity / Direct thrombin inhibitor detection</p>
+        <p><strong>Detection Method:</strong> 1st Derivative | <strong>Normal Range:</strong> 11-16 seconds</p>
+        <div class="wavelength-box">
+            <strong>Both Models:</strong> 405nm primary
+        </div>
+        <p><strong>How It Works:</strong> Thrombin directly converts fibrinogen → 405nm detects fibrin formation rate</p>
+    </div>
+
+    <div class="parameter-card">
+        <h3>5. D-Dimer</h3>
+        <p><strong>Clinical:</strong> Fibrin degradation marker / Thromboembolism rule-out (< 0.5 µg/mL normal)</p>
+        <p><strong>Detection Method:</strong> Immunoturbidimetric 1st Derivative</p>
+        <div class="wavelength-box">
+            <strong>Both Models:</strong> 405nm immunoassay measurement
+        </div>
+        <p><strong>How It Works:</strong> Monoclonal antibodies bind D-Dimer → particle agglutination → 405nm absorbance = D-Dimer concentration</p>
+    </div>
+
+    <div class="parameter-card">
+        <h3>6. FDP (Fibrin Degradation Products)</h3>
+        <p><strong>Clinical:</strong> Active fibrinolysis marker / DIC, sepsis, liver disease (< 5 µg/mL normal)</p>
+        <p><strong>Detection Method:</strong> Immunoturbidimetric 1st Derivative</p>
+        <div class="wavelength-box">
+            <strong>Both Models:</strong> 405nm immunoassay measurement
+        </div>
+        <p><strong>How It Works:</strong> FDP-specific antibodies bind fragments → particle clumping → 405nm detects agglutination</p>
+    </div>
+
+    <div class="parameter-card">
+        <h3>7. AT-III (Antithrombin III)</h3>
+        <p><strong>Clinical:</strong> Natural anticoagulant / Thrombosis risk assessment (80-120% normal)</p>
+        <p><strong>Detection Method:</strong> Chromogenic substrate assay</p>
+        <div class="wavelength-box">
+            <strong>Both Models:</strong> 405nm colorimetric measurement
+        </div>
+        <p><strong>How It Works:</strong> AT-III inhibits thrombin → uninhibited thrombin cleaves chromogenic substrate → yellow color at 405nm (inverse measurement)</p>
+    </div>
+</div>
+
+<!-- PARAMETER SUMMARY TABLE -->
+<div class="section">
+    <h2>📊 Parameter Summary: Detection Methods & Wavelengths</h2>
+
+    <table class="table">
+        <tr>
+            <th>Parameter</th>
+            <th>Detection Method</th>
+            <th>CX-6000 Wavelengths</th>
+            <th>CX-9000 Wavelengths</th>
+            <th>Clinical Use</th>
+        </tr>
+        <tr>
+            <td><strong>PT</strong></td>
+            <td>1st Derivative</td>
+            <td>405 + 575nm</td>
+            <td>405 + 545nm</td>
+            <td>Extrinsic pathway screening</td>
+        </tr>
+        <tr>
+            <td><strong>APPT</strong></td>
+            <td>1st Deriv / 2nd Deriv⭐</td>
+            <td>405 + 660nm</td>
+            <td>405 + 545 + 800nm</td>
+            <td>Intrinsic pathway + mixing</td>
+        </tr>
+        <tr>
+            <td><strong>Fibrinogen</strong></td>
+            <td>1st Derivative</td>
+            <td>405nm</td>
+            <td>405nm</td>
+            <td>Factor I quantification</td>
+        </tr>
+        <tr>
+            <td><strong>Thrombin Time</strong></td>
+            <td>1st Derivative</td>
+            <td>405nm</td>
+            <td>405nm</td>
+            <td>Fibrinogen quality assessment</td>
+        </tr>
+        <tr>
+            <td><strong>D-Dimer</strong></td>
+            <td>Immunoassay</td>
+            <td>405nm</td>
+            <td>405nm</td>
+            <td>VTE/DIC detection</td>
+        </tr>
+        <tr>
+            <td><strong>FDP</strong></td>
+            <td>Immunoassay</td>
+            <td>405nm</td>
+            <td>405nm</td>
+            <td>Active fibrinolysis marker</td>
+        </tr>
+        <tr>
+            <td><strong>AT-III</strong></td>
+            <td>Chromogenic</td>
+            <td>405nm</td>
+            <td>405nm</td>
+            <td>Anticoagulant assessment</td>
+        </tr>
+    </table>
+</div>
+
+<!-- AUTOMATED MIXING STUDY -->
+<div class="section">
+    <h2>🔄 Automated APPT Mixing Study</h2>
+
+    <h3>CX-9000: 7-Step Automated Process</h3>
+    <p>Differentiates factor deficiency from inhibitors with 120-minute incubation - the only automated system with full 2-hour capability.</p>
+
+    <div class="detection-method-box">
+        <strong>Workflow:</strong>
+        <ol style="margin-left: 20px; margin-top: 10px;">
+            <li>Patient APPT baseline test (APPT1)</li>
+            <li>Normal plasma pool preparation</li>
+            <li>1:1 mix preparation (precise automated ratio)</li>
+            <li>Immediate mix testing (APPT2 & APPT3) → RI_CT calculation</li>
+            <li>Immediate interpretation (< 11% = corrects)</li>
+            <li>Extended 120-minute incubation at 37°C (CX-9000 exclusive feature)</li>
+            <li>Post-incubation testing (APPT6 & APPT7) → automatic diagnosis</li>
+        </ol>
+    </div>
+
+    <h3>Clinical Outcomes Detected</h3>
+    <ul style="margin-left: 20px;">
+        <li>✅ <strong>Corrects & Stays Corrected:</strong> Factor deficiency (hemophilia)</li>
+        <li>❌ <strong>Doesn't Correct:</strong> Immediate-acting inhibitor (lupus anticoagulant)</li>
+        <li>🔴 <strong>Corrects Then Worsens:</strong> Time-dependent inhibitor (developing Factor VIII antibody) - CRITICAL DISCOVERY</li>
+    </ul>
+
+    <div class="highlight">
+        <strong>CX-9000 Clinical Advantage:</strong> 120-minute incubation catches time-dependent inhibitors. Competitors with 12-15 minute incubation would MISS these developing inhibitors - a patient safety advantage.
+    </div>
+</div>
+
+<!-- TECHNICAL SPECIFICATIONS TABLE -->
+<div class="section">
+    <h2>⚙️ Technical Specifications</h2>
+
+    <table class="table">
+        <tr>
+            <th>Specification</th>
+            <th>CX-6000</th>
+            <th>CX-9000</th>
+        </tr>
+        <tr>
+            <td><strong>Throughput</strong></td>
+            <td>400 tests/hour</td>
+            <td>450 tests/hour</td>
+        </tr>
+        <tr>
+            <td><strong>Sample Volume</strong></td>
+            <td>150 µL per test</td>
+            <td>150 µL per test</td>
+        </tr>
+        <tr>
+            <td><strong>Optical Channels</strong></td>
+            <td>3 wavelengths</td>
+            <td>4 wavelengths (includes 800nm NIR)</td>
+        </tr>
+        <tr>
+            <td><strong>Detection Methods</strong></td>
+            <td>Threshold, 1st Derivative</td>
+            <td>Threshold, 1st Derivative, 2nd Derivative</td>
+        </tr>
+        <tr>
+            <td><strong>APPT Mixing Study</strong></td>
+            <td>Manual preparation</td>
+            <td>Fully automated (7-step)</td>
+        </tr>
+        <tr>
+            <td><strong>Incubation Capability</strong></td>
+            <td>Basic temperature control</td>
+            <td>120-minute extended incubation (37°C ± 0.2°C)</td>
+        </tr>
+        <tr>
+            <td><strong>Hemolysis Tolerance</strong></td>
+            <td>Moderate (< 300 mg/dL)</td>
+            <td>Excellent (< 500 mg/dL with 800nm)</td>
+        </tr>
+        <tr>
+            <td><strong>Temperature Precision</strong></td>
+            <td>37°C ± 0.5°C</td>
+            <td>37°C ± 0.2°C (more precise)</td>
+        </tr>
+        <tr>
+            <td><strong>Cuvette System</strong></td>
+            <td>Disposable plastic</td>
+            <td>Disposable plastic (automatic positioning)</td>
+        </tr>
+        <tr>
+            <td><strong>Data Management</strong></td>
+            <td>LIS integration capable</td>
+            <td>Enhanced LIS integration + reporting</td>
+        </tr>
+    </table>
+</div>
+
+<!-- PATHWAY DIAGRAMS -->
+<div class="section">
+    <h2>🧬 Coagulation Cascade Pathways Measured</h2>
+
+    <h3>Extrinsic Pathway (PT - 3-4 steps)</h3>
+    <p>Tissue Factor → Factor VII → Factor X → Factor V → Factor II → Fibrin (FAST - ~11 seconds)</p>
+
+    <h3>Intrinsic Pathway (APPT - 6-7 steps)</h3>
+    <p>Contact Factors → Factor XII → Factor XI → Factor IX → Factor X → Factor V → Factor II → Fibrin (LONGER - ~30 seconds)</p>
+
+    <h3>Common Pathway (shared)</h3>
+    <p>Factor X → Factor V (Prothrombin Activator) → Factor II (Prothrombin) → Thrombin → Fibrinogen → Fibrin Clot</p>
+
+    <p><strong>Clinical Insight:</strong> PT tests extrinsic/common (fast), APPT tests intrinsic/common (slower, more sensitive to deficiencies), so APPT is the more sensitive screening test.</p>
+</div>
+
+<!-- COMPETITIVE ADVANTAGES -->
+<div class="section">
+    <h2>⭐ Key Competitive Advantages</h2>
+
+    <div class="benefits-grid">
+        <div class="benefit-card">
+            <h4>🔬 CX-9000's 2nd Derivative</h4>
+            <p>Catches mild clotting defects 1st Derivative misses - superior clinical sensitivity</p>
+        </div>
+        <div class="benefit-card">
+            <h4>📈 800nm Infrared (CX-9000 Only)</h4>
+            <p>Tests hemolytic samples competitors CANNOT - solves real lab workflow problems</p>
+        </div>
+        <div class="benefit-card">
+            <h4>⏱️ 120-Minute Incubation</h4>
+            <p>Catches time-dependent inhibitors. Competitors do 12-15 minutes and miss critical diagnoses</p>
+        </div>
+        <div class="benefit-card">
+            <h4>🔄 Automated Mixing Study</h4>
+            <p>7-step procedure fully automated on CX-9000. Manual on CX-6000, competitors vary</p>
+        </div>
+        <div class="benefit-card">
+            <h4>⚡ High Throughput</h4>
+            <p>400-450 tests/hour keeps pace with largest hospital labs</p>
+        </div>
+        <div class="benefit-card">
+            <h4>✓ Proven Reliability</h4>
+            <p>7 complete parameters with consistent quality results</p>
+        </div>
+    </div>
+</div>
+
+<!-- SALES TALKING POINTS -->
+<div class="section">
+    <h2>💬 Sales Talking Points</h2>
+
+    <h3>For Hospital Lab Directors</h3>
+    <ul style="margin-left: 20px;">
+        <li>"CX-9000's 2nd Derivative APPT detection catches bleeding disorders competitors miss"</li>
+        <li>"800nm wavelength eliminates hemolytic sample re-tests - saves time and cost"</li>
+        <li>"120-minute automated mixing study discovers time-dependent inhibitors - patient safety advantage"</li>
+    </ul>
+
+    <h3>For Coagulation Lab Managers</h3>
+    <ul style="margin-left: 20px;">
+        <li>"Four simultaneous wavelengths = fewer invalid results = faster turnaround"</li>
+        <li>"2nd Derivative methodology is optically sophisticated - rivals reference laboratories"</li>
+        <li>"Automated 7-step mixing eliminates manual technician error"</li>
+    </ul>
+
+    <h3>For CFOs and Procurement</h3>
+    <ul style="margin-left: 20px;">
+        <li>"CX-6000 is cost-effective entry to automated coagulation testing"</li>
+        <li>"CX-9000 advanced features reduce re-testing and improve workflow efficiency"</li>
+        <li>"450 tests/hour = handles high-volume labs without capital expansion"</li>
+    </ul>
+</div>
+
+<!-- SUMMARY -->
+<div class="section" style="background: linear-gradient(135deg, #065A82 0%, #1C7293 100%); color: white; border-left: none;">
+    <h2 style="color: white;">CX-Series: The Complete Coagulation Solution</h2>
+    <p>Advanced optical detection technology with clinical reliability for laboratories of all sizes.</p>
+    <div style="margin: 20px 0;">
+        <p><strong>Choose CX-6000:</strong> Cost-effective, 400 tests/hour, 3 wavelengths, 1st Derivative</p>
+        <p><strong>Choose CX-9000:</strong> Premium capability, 450 tests/hour, 4 wavelengths, 2nd Derivative, 800nm, 120-min mixing study</p>
+    </div>
+</div>
+
+</div>
+
+<div class="footer">
+    <p><strong>CX-Series Product Summary & Technical Specifications</strong></p>
+    <p>Comprehensive product overview for sales, marketing, and lab professionals</p>
+    <p style="margin-top: 20px; color: #999;">Complete Technical Reference | June 2026 | Sales & Marketing Material</p>
+</div>
+
+</body>
+</html>
