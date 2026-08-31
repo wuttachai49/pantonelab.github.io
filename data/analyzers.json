@@ -71,7 +71,7 @@
         "name": "Mindray CX Series",
         "type": "Coagulation Analyzer",
         "manufacturer": "Shenzhen Mindray Bio-Medical Electronics",
-        "description": "Advanced coagulation analyzer series with models CX-6000, CX-6100, and CX-9000. Complete training hub with specifications, QC management, troubleshooting, and setup guides.",
+        "description": "Advanced coagulation analyzer series with models CX-6000, CX-6100, and CX-9000. Complete training hub with comprehensive measurement principles, specifications, QC management, troubleshooting, and setup guides.",
         "parameters": [
             "PT - Prothrombin Time",
             "APPT - Activated Partial Thromboplastin Time",
@@ -82,7 +82,10 @@
             "Factor Assays (V, VII, VIII, IX, X, XI, XII)",
             "Protein C and S",
             "Plasminogen",
-            "Antithrombin"
+            "Antithrombin",
+            "FII - Factor II Activity",
+            "FV - Factor V Activity",
+            "FX - Factor X Activity"
         ],
         "troubleshooting": [
             "Probe Clog: Run Sample Probe Unclog from Maintenance menu",
@@ -90,12 +93,13 @@
             "Waste Container Full: Empty biohazard waste container safely",
             "Invalid QC Result: Check QC material lot, expiration date, and storage temperature",
             "Temperature Alarm: Verify power supply and airflow, cool system 15 minutes, restart",
-            "Barcode Not Scanned: Clean scanner window, verify barcode clarity, check sample positioning"
+            "Barcode Not Scanned: Clean scanner window, verify barcode clarity, check sample positioning",
+            "Measurement Error: Verify reagent reconstitution, check sample quality, review calibration"
         ],
-        "notes": "High-precision coagulation testing for hemostasis monitoring. All models include Westgard QC rules, LIS integration, and RFID support. Daily maintenance is critical for accuracy and preventing carryover contamination.",
+        "notes": "High-precision coagulation testing using optical clot detection (OCD) methodology. All models include Westgard QC rules, LIS integration, RFID support, and comprehensive measurement principle documentation. Optical measurement principle tracks plasma turbidity change during coagulation for accurate clot detection. Daily maintenance is critical for accuracy and preventing carryover contamination. Supports both 3.2% sodium citrate and alternative anticoagulants.",
         "attachments": [
             {
-                "name": "🎓 CX Series Training Hub",
+                "name": "🎓 CX Series Complete Training Hub",
                 "type": "Interactive HTML",
                 "url": "cx-series-hub.html"
             }
