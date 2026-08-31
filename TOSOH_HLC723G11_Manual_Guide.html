@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOSOH HLC-723G11 - Operation Guide (From Manual)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1em;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: #333;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            overflow-x: auto;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 0.95em;
+        }
+
+        nav a:hover, nav a.active {
+            background: #667eea;
+            border-bottom-color: #fff;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        section {
+            margin-bottom: 50px;
+            display: none;
+        }
+
+        section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        section h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        section h4 {
+            color: #667eea;
+            font-size: 1.05em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tr:hover {
+            background: #f5f5f5;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #ffd89b 0%, #ffa751 100%);
+            border-left: 5px solid #f39c12;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .step-box {
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .diagram {
+            background: #f8f9fa;
+            border: 2px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        .print-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.95em;
+            margin: 10px 0;
+            transition: background 0.3s ease;
+        }
+
+        .print-button:hover {
+            background: #764ba2;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav a {
+                font-size: 0.85em;
+                padding: 12px 15px;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            table th, table td {
+                padding: 8px;
+            }
+        }
+
+        @media print {
+            nav, .print-button {
+                display: none;
+            }
+        }
+
+        strong {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TOSOH HLC-723G11 Glycohemoglobin Analyzer</h1>
+            <p>Operation Guide - Based on Official Manual</p>
+            <button class="print-button" onclick="window.print()">🖨️ Print Guide</button>
+        </header>
+
+        <nav>
+            <a class="nav-link active" onclick="showSection(event, 'overview')">1. Overview</a>
+            <a class="nav-link" onclick="showSection(event, 'dailycare')">2.1 Daily Care</a>
+            <a class="nav-link" onclick="showSection(event, 'poweron')">2.2 Power On</a>
+            <a class="nav-link" onclick="showSection(event, 'preparation')">2.3 Sample Prep</a>
+            <a class="nav-link" onclick="showSection(event, 'loadsample')">2.4 Load Sample</a>
+            <a class="nav-link" onclick="showSection(event, 'processing')">2.5 Processing</a>
+            <a class="nav-link" onclick="showSection(event, 'interpretation')">2.6 Interpretation</a>
+            <a class="nav-link" onclick="showSection(event, 'calibration')">2.7-2.8 Calibration</a>
+            <a class="nav-link" onclick="showSection(event, 'stat')">2.9 STAT Assay</a>
+            <a class="nav-link" onclick="showSection(event, 'maintenance')">3-6 Maintenance</a>
+            <a class="nav-link" onclick="showSection(event, 'troubleshoot')">8-9 Troubleshooting</a>
+        </nav>
+
+        <div class="content">
+
+            <!-- OVERVIEW -->
+            <section id="overview" class="active">
+                <h2>1. Overview - Power Switch Operation</h2>
+                
+                <h3>Main Power Switch</h3>
+                <p>The main power switch is located to activate the power of the device. The switch is labeled "I" for powering on the device and "O" for powering off the device.</p>
+
+                <h3>Operation Status</h3>
+                <p>After pressing the Power key on the front panel, the machine displays the HbA1c / STD ANALYSIS operation status. The display shows the operation status of the analyzer that has been set.</p>
+
+                <h3>Device Statuses</h3>
+                <p>The following statuses are displayed when operating the analyzer:</p>
+                <ul>
+                    <li><strong>WARMING-UP:</strong> Device initialization phase</li>
+                    <li><strong>STAND-BY:</strong> Device ready, awaiting sample input</li>
+                    <li><strong>ANALYSIS:</strong> Currently analyzing samples</li>
+                    <li><strong>WASH:</strong> Column washing after sample analysis</li>
+                    <li><strong>COL.WASH:</strong> Column wash for reagent change</li>
+                    <li><strong>BUFF PRIME:</strong> Buffer priming operation</li>
+                    <li><strong>PUMP WASH:</strong> Pump cleaning and washing</li>
+                    <li><strong>PURGING:</strong> System purging operation</li>
+                </ul>
+
+            </section>
+
+            <!-- DAILY CARE -->
+            <section id="dailycare">
+                <h2>2.1 Daily Care</h2>
+
+                <p>Before pressing the Power key, ensure the following checks are completed:</p>
+
+                <h3>Check Elution Buffers and Wash Solution</h3>
+                <p>Verify that Elution Buffers 1, 2, 3 and Hemolysis & Wash Solution levels are adequate. These should be checked to ensure proper operation of the analyzer.</p>
+
+                <h3>Reagent Replacement</h3>
+                <p>Reagent kit 1 contains materials for approximately 270 runs. When the reagent level drops below the minimum mark, replacement is necessary. Refer to Section 5 for reagent replacement procedures.</p>
+
+                <h3>Paper Replacement</h3>
+                <p>Ensure printer paper is available. When depleted, paper replacement is needed. Refer to Section 6 for paper replacement procedures.</p>
+
+                <h3>Dilution Port Maintenance</h3>
+                <p>The dilution port should be kept clean and clear. Ensure the port opening is free of debris and properly positioned for accurate sample dilution during analysis.</p>
+
+                <div class="warning-box">
+                    <strong>Important:</strong> Always dispose of waste contaminated with blood as biohazard waste according to standard operating procedures.
+                </div>
+
+            </section>
+
+            <!-- POWER ON -->
+            <section id="poweron">
+                <h2>2.2 Powering On - Warming Up</h2>
+
+                <h3>Startup Process</h3>
+                <ol>
+                    <li>Press the Power key on the front panel display</li>
+                    <li>The device will enter WARMING-UP phase</li>
+                    <li>During warm-up, the following operations occur:
+                        <ul>
+                            <li>PUMP CLEAN: Pump line cleaning</li>
+                            <li>BUFF PRIME: Buffer priming (approximately 5 mL per buffer)</li>
+                            <li>WARMING-UP: Temperature stabilization</li>
+                            <li>STAND-BY: Sampling line priming</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>Warm-up Duration</h3>
+                <p>The warm-up phase requires approximately 8 minutes. The machine will automatically transition to STAND-BY status when initialization is complete.</p>
+
+                <h3>Number of Injections</h3>
+                <p>The system tracks the number of filter and column injections. Monitor these counts during the warm-up phase on the main display screen.</p>
+
+                <h3>Solenoid Valve Status</h3>
+                <p>The solenoid valve operations are controlled during warm-up. Verify proper valve function by observing the display indicators.</p>
+
+            </section>
+
+            <!-- SAMPLE PREPARATION -->
+            <section id="preparation">
+                <h2>2.3 Preparation Sample</h2>
+
+                <h3>Sample Types</h3>
+                <p>Samples should be prepared as follows:</p>
+
+                <h4>Patient Sample (Whole Blood)</h4>
+                <ul>
+                    <li>Use whole blood samples</li>
+                    <li>Volume should be adequate (>1 mL recommended)</li>
+                    <li>Mix by inverting in sample rack</li>
+                </ul>
+
+                <h4>Calibrator or Control</h4>
+                <ul>
+                    <li>Prepare calibrator material as specified in package insert</li>
+                    <li>Transfer into sample cup</li>
+                    <li>Place in designated positions in rack</li>
+                </ul>
+
+                <h3>Sample Dilution</h3>
+                <p>If the sample requires pre-dilution:</p>
+                <ul>
+                    <li>Dilute sample with Hemolysis & Wash Solution</li>
+                    <li>Total area should be 700-3000 for acceptable results</li>
+                    <li>If Total area is below 700, dilute 1:100</li>
+                    <li>If Total area is above 3000, dilute 1:400</li>
+                </ul>
+
+                <h3>Sample Preparation Notes</h3>
+                <p>Primary tube must be mixed thoroughly before analysis. For diluted samples, use the cup adapter. Pipette approximately 150 µL into the sample cup.</p>
+
+            </section>
+
+            <!-- LOAD SAMPLE -->
+            <section id="loadsample">
+                <h2>2.4 Load Sample</h2>
+
+                <h3>Sample Rack Types</h3>
+                <p>The analyzer accepts two types of sample racks:</p>
+                <ul>
+                    <li><strong>TOSOH Rack:</strong> Holds sample vials using sample adapter</li>
+                    <li><strong>SYSMEX Rack:</strong> Alternative rack type with barcode capability</li>
+                </ul>
+
+                <h3>Sample Rack Loading Procedure</h3>
+                <p>For TOSOH Rack with primary tubes:</p>
+                <ul>
+                    <li>Use sample vial with adapter or cup adapter</li>
+                    <li>Insert positions numbered 1-10 in the rack</li>
+                    <li>Position 10 should contain End Marker or empty rack</li>
+                    <li>Sampling needle will aspirate from each position</li>
+                </ul>
+
+                <h3>Cup Adapter</h3>
+                <p>Use the cup adapter for diluted samples. The cup adapter connects to the sampling needle in the defined rack position.</p>
+
+                <h3>Rack Position Assignment</h3>
+                <p>Control samples should be placed in Rack Position 1 (position code 1). Positions 1-2 typically contain calibrators and controls. Positions 3 onwards contain patient samples.</p>
+
+                <h3>Sample Rack Loading Location</h3>
+                <p>Load the sample rack into the Rack position marked on the analyzer front panel (marked as position A). Ensure the rack is properly seated.</p>
+
+            </section>
+
+            <!-- PROCESSING -->
+            <section id="processing">
+                <h2>2.5 Processing Patient Samples</h2>
+
+                <h3>Starting Analysis</h3>
+                <ol>
+                    <li>Load sample racks into positions as described in Section 2.4</li>
+                    <li>Place the End Marker or empty rack at position 10 to signal analysis completion</li>
+                    <li>Press the START key on the front panel</li>
+                </ol>
+
+                <h3>Analysis Process</h3>
+                <p>After pressing START, the analyzer will:</p>
+                <ul>
+                    <li>Perform calibration check if CALIB key is enabled</li>
+                    <li>Begin ANALYSIS phase</li>
+                    <li>First result will be obtained approximately 2 minutes after START</li>
+                    <li>Subsequent results will be obtained at approximately 1-minute intervals</li>
+                </ul>
+
+                <h3>Automated Dilution</h3>
+                <p>The machine automatically dilutes samples at 1:201 ratio. For samples requiring different dilutions, enter dilution mode before analysis.</p>
+
+                <h3>End of Analysis</h3>
+                <p>When the End Marker is detected or empty rack position is reached, the analyzer will:</p>
+                <ul>
+                    <li>Perform WASH cycle</li>
+                    <li>Return to STAND-BY status</li>
+                    <li>Complete PUMP WASH operation</li>
+                </ul>
+
+                <h3>Shutdown Sequence</h3>
+                <p>If not performing additional analysis, the analyzer will proceed to Shut-Off after 2 cycles of standby. Parameter settings can be used to customize the Off-timer (1, 2, or 3 hours).</p>
+
+            </section>
+
+            <!-- INTERPRETATION -->
+            <section id="interpretation">
+                <h2>2.6 Interpretation of Test Result</h2>
+
+                <h3>Result Report Components</h3>
+                <p>The printed result includes:</p>
+                <ul>
+                    <li><strong>Sample Number/Rack Number:</strong> Identifies the sample position</li>
+                    <li><strong>HbA1c Value:</strong> The primary result expressed as percentage</li>
+                    <li><strong>Sample ID:</strong> Barcode identification if available</li>
+                    <li><strong>Calibration Factor:</strong> Linear equation parameters (Y = Slope × + Intercept)</li>
+                    <li><strong>Total Area:</strong> Quality indicator showing integration value</li>
+                    <li><strong>Hemoglobin Fractions:</strong> Peak breakdown showing component percentages</li>
+                    <li><strong>Chromatogram:</strong> Visual peak pattern display</li>
+                    <li><strong>Flag Messages:</strong> Any quality warnings or errors</li>
+                </ul>
+
+                <h3>Peak Components</h3>
+                <p>The report displays hemoglobin fraction results including:</p>
+                <ul>
+                    <li>FP (Front Peak)</li>
+                    <li>A1A, A1B (HbA1c variants)</li>
+                    <li>A1C (Main HbA1c peak)</li>
+                    <li>F (HbF)</li>
+                    <li>A0 (Other hemoglobins)</li>
+                </ul>
+
+                <h3>Total Area Significance</h3>
+                <p>Total area represents the integrated chromatography peak area. Acceptable range is 700-3000. If outside this range, the sample may require re-analysis with appropriate dilution.</p>
+
+                <h3>Flag Messages Interpretation</h3>
+                <p>Flag messages appearing on the result indicate:</p>
+                <ul>
+                    <li><strong>AREA HIGH / AREA TOO HIGH:</strong> Total area exceeds 3000 (consider dilution)</li>
+                    <li><strong>AREA LOW / AREA TOO LOW:</strong> Total area less than 700 (consider higher concentration or different dilution)</li>
+                </ul>
+
+            </section>
+
+            <!-- CALIBRATION -->
+            <section id="calibration">
+                <h2>2.7 Calibration (Preparation) & 2.8 Calibration (Assay)</h2>
+
+                <h3>Calibration Preparation</h3>
+                <ol>
+                    <li>Obtain calibrator kit from package (contains 4 mL bottle, approximately 1 bottle calibrator)</li>
+                    <li>Pipette calibrator approximately 400 µL into sample cup</li>
+                    <li>Transfer into cup adapter</li>
+                </ol>
+
+                <h3>Calibrator Loading</h3>
+                <ol>
+                    <li>Load calibrator rack at Position A on the analyzer</li>
+                    <li>Ensure calibrators are in Rack position 1 (positions 1 and 2 for Low and High)</li>
+                    <li>Verify rack is properly seated</li>
+                </ol>
+
+                <h3>Calibration Assay Procedure</h3>
+                <ol>
+                    <li>Determine Calibrate on main menu screen</li>
+                    <li>Press CALIB key (Calibrate or STD button)</li>
+                    <li>Set CALIB parameter using the calibration entry</li>
+                    <li>Press CALIB SET button</li>
+                </ol>
+
+                <h3>Calibration Process</h3>
+                <p>After pressing START key:</p>
+                <ul>
+                    <li>Machine performs 5 total injections (3 of Calibrator 1, 2 of Calibrator 2)</li>
+                    <li>Calibration takes approximately 8 minutes</li>
+                    <li>Results show calibrator values and calibration equation</li>
+                </ul>
+
+                <h3>Calibration Report</h3>
+                <p>Upon completion, a Calibration Report is printed showing:</p>
+                <ul>
+                    <li>Calibration date and time</li>
+                    <li>OLD calibration equation (previous)</li>
+                    <li>NEW calibration equation (current)</li>
+                    <li>Filter count and column count</li>
+                </ul>
+
+                <h3>Calibration Acceptance</h3>
+                <p>The calibration will show status as COMPLETED or indicate a Calibration Error. Check that calibrator values are within acceptable limits before proceeding with patient sample analysis.</p>
+
+                <h3>Control Validation</h3>
+                <p>After calibration, controls should be analyzed to verify system performance before running patient samples.</p>
+
+            </section>
+
+            <!-- STAT -->
+            <section id="stat">
+                <h2>2.9 Priority (STAT) Assay</h2>
+
+                <h3>STAT Sample Definition</h3>
+                <p>STAT (Priority) samples are analyzed using the alternative port located on the analyzer. This allows for priority analysis separate from the routine sample queue.</p>
+
+                <h3>STAT Port Location</h3>
+                <p>The STAT port is positioned on the right side of the analyzer at mid-height. A dedicated sampling needle is available for STAT port operation.</p>
+
+                <h3>STAT Sample Types</h3>
+                <p>STAT samples can be prepared as:</p>
+                <ul>
+                    <li>Whole blood samples (primary tube or sample cup)</li>
+                    <li>Pre-diluted samples using cup adapter</li>
+                    <li>Diluted at 1:200 or other ratios as needed</li>
+                </ul>
+
+                <h3>STAT Sample Preparation</h3>
+                <ol>
+                    <li>Prepare sample as whole blood or diluted specimen</li>
+                    <li>Sample should be >1 mL for whole blood or >150 µL for pre-diluted</li>
+                    <li>Select STAT mode on analyzer screen</li>
+                </ol>
+
+                <h3>STAT Sample Loading</h3>
+                <ol>
+                    <li>On STAT Screen, enter Sample ID if available</li>
+                    <li>Select BLOOD for whole blood or DILUTED for pre-diluted</li>
+                    <li>Open STAT port cap</li>
+                    <li>Insert sample vial or cup adapter into STAT port</li>
+                    <li>Sample needle will automatically aspirate approximately 5 µL</li>
+                    <li>Remove sample after needle retracts</li>
+                    <li>Close STAT port cap immediately</li>
+                </ol>
+
+                <h3>STAT Analysis</h3>
+                <p>After sample insertion and port closure:</p>
+                <ol>
+                    <li>Press START key from STAT screen</li>
+                    <li>Machine will pause routine analysis if running</li>
+                    <li>STAT sample analysis proceeds immediately</li>
+                    <li>Result will be available in 2-3 minutes</li>
+                </ol>
+
+                <h3>Auto-Resume Function</h3>
+                <p>After STAT result is complete:</p>
+                <ul>
+                    <li>Machine performs WASH cycle</li>
+                    <li>Routine sample analysis automatically resumes</li>
+                    <li>STAT result is clearly marked with 8000-series sample number</li>
+                </ul>
+
+                <h3>Special Dilution Modes for STAT</h3>
+                <p>STAT mode allows selection of dilution levels:</p>
+                <ul>
+                    <li><strong>DEFAULT (1:201):</strong> Standard dilution for normal hematocrit</li>
+                    <li><strong>INCREASE (1:100):</strong> For low hematocrit samples</li>
+                    <li><strong>DECREASE (1:400):</strong> For high hematocrit samples</li>
+                </ul>
+
+            </section>
+
+            <!-- MAINTENANCE -->
+            <section id="maintenance">
+                <h2>3-6 Maintenance Procedures</h2>
+
+                <h3>Filter Replacement (Section 3)</h3>
+                <p>Filter replacement is performed when samples run exceeds approximately 600 samples or when pump pressure increases above 2 MPa.</p>
+
+                <h4>Procedure:</h4>
+                <ol>
+                    <li>Open the right door of the incubator</li>
+                    <li>Rotate the Filter handle counter-clockwise</li>
+                    <li>Remove the old filter element</li>
+                    <li>Insert new filter with ribbed edge facing upward</li>
+                    <li>Rotate Filter handle clockwise to lock</li>
+                    <li>Close incubator door</li>
+                    <li>Verify pressure reading (should read 6+ MPa)</li>
+                </ol>
+
+                <h3>Column Replacement (Section 4)</h3>
+                <p>Column replacement is required after approximately 2500 runs or when chromatograms show baseline issues or unknown peaks.</p>
+
+                <h4>Procedure:</h4>
+                <ol>
+                    <li>Cool column to room temperature</li>
+                    <li>Open incubator door</li>
+                    <li>Disconnect pump inlet (right side connection only)</li>
+                    <li>Remove protective plugs from new column</li>
+                    <li>Connect new column pump inlet</li>
+                    <li>Prime buffer through new column (observe left outlet)</li>
+                    <li>Connect detector inlet (left side)</li>
+                    <li>Close incubator door</li>
+                    <li>Verify pressure is within specification</li>
+                </ol>
+
+                <h3>Reagent Replacement (Section 5)</h3>
+                <p>Elution Buffers and Hemolysis/Wash Solution replacement procedure:</p>
+
+                <h4>Procedure:</h4>
+                <ol>
+                    <li>Navigate to REAGENT CHANGE menu</li>
+                    <li>Press REAGENT CHANGE button (when highlighted on MAINTE screen)</li>
+                    <li>Highlight reagents requiring replacement (turns green when selected)</li>
+                    <li>Remove old bottles from aluminum holders</li>
+                    <li>Install new reagent bottles with correct color-coded tubing</li>
+                    <li>Press PRIME button to prime new reagents into system</li>
+                    <li>Observe progress bar filling to 100%</li>
+                    <li>Press OK to confirm reagent installation</li>
+                </ol>
+
+                <h4>Reagent Notes:</h4>
+                <ul>
+                    <li>Elution Buffer Lot must match Column Lot</li>
+                    <li>Never mix reagent lots from different shipments</li>
+                    <li>Hemolysis & Wash Solution must be replaced when depleted (do not reuse)</li>
+                </ul>
+
+                <h3>Printer Paper Replacement (Section 6)</h3>
+                <p>Printer paper replacement occurs after approximately 270 runs.</p>
+
+                <h4>Procedure:</h4>
+                <ol>
+                    <li>Open printer cover</li>
+                    <li>Remove spent paper roll</li>
+                    <li>Insert new thermal paper roll onto mandrel</li>
+                    <li>Advance paper through feed slot</li>
+                    <li>Verify alignment in exit slot</li>
+                    <li>Close printer cover</li>
+                </ol>
+
+            </section>
+
+            <!-- TROUBLESHOOTING -->
+            <section id="troubleshoot">
+                <h2>7-9 Troubleshooting, Results Retrieval & Abnormal Chromatograms</h2>
+
+                <h3>Section 7: Recalculation (Reprinting/Transmission Results)</h3>
+                <p>Results stored in analyzer memory can be recalled, reprinted, or transmitted to host systems. Last 800 results are retained in system memory.</p>
+
+                <h4>Retrieval Procedure:</h4>
+                <ol>
+                    <li>Press MENU button on main screen</li>
+                    <li>Select RESULT or LIST option</li>
+                    <li>Use SEARCH to locate results by date</li>
+                    <li>Filter by CAL (Calibration), CTL (Control), or SP. (Sample)</li>
+                    <li>Select sample range or specific result</li>
+                    <li>Press command button: PRINT / TRANS (transmit) / DELETE</li>
+                </ol>
+
+                <h3>Section 8: Trouble Shooting</h3>
+
+                <h4>AREA HIGH (Area Too High) - Flag Message</h4>
+                <p>Occurs when Total area exceeds 3000 (approximately 4000 limit). This indicates high hemoglobin concentration and low hematocrit. Solution: Dilute sample at 1:400 using STAT mode (50 µL blood + 2 mL solution).</p>
+
+                <h4>AREA LOW (Area Too Low) - Flag Message</h4>
+                <p>Occurs when Total area is below 500-700. This indicates low hemoglobin concentration. Solution: Dilute sample at 1:100 using STAT mode (50 µL blood + 5 mL solution) or check sample for proper preparation.</p>
+
+                <h4>100 PRESSURE HIGH Error</h4>
+                <p>Pump pressure exceeds safe threshold. Causes include: clogged filter, deteriorating column, or air in pump. Solutions: Check and replace filter if >600 samples, replace column if >2500 samples, or run system purge/drain flush procedure.</p>
+
+                <h4>101 PRESSURE LOW Error</h4>
+                <p>Pump pressure drops below expected level. Causes include: air in pump, empty buffer bottle, check valve failure. Solutions: Verify buffer bottles are not empty, run DRAIN FLUSH procedure (see Appendix-3), check tubing connections.</p>
+
+                <h4>201 CALIB ERROR</h4>
+                <p>Calibration values fall outside acceptable limits. Solutions: Verify calibrator values match package insert, check that calibrator lot matches column lot, verify reagent is not expired, replace Elution Buffers, or replace column if suspect.</p>
+
+                <h3>Section 9: Abnormal Chromatograms</h3>
+                <p>Abnormal chromatograms show unexpected peak patterns. May indicate hemoglobin variants (Hb S, Hb C) or system issues. Compare against normal chromatogram patterns showing 5 distinct hemoglobin peaks.</p>
+
+                <h4>Potential Causes:</h4>
+                <ul>
+                    <li>Hemoglobin variant in patient sample</li>
+                    <li>Column deterioration</li>
+                    <li>Pump flow issues</li>
+                    <li>Reagent problems</li>
+                </ul>
+
+            </section>
+
+        </div>
+
+        <footer>
+            <p>TOSOH HLC-723G11 Glycohemoglobin Analyzer - Operation Guide</p>
+            <p>Content sourced directly from official TOSOH operation manual</p>
+            <p>For technical support, contact your distributor or authorized service representative</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(e, sectionId) {
+            e.preventDefault();
+            
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            e.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

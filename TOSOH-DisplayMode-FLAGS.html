@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOSOH HLC-723G11: Display Mode & FLAG Settings</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .source-badge {
+            display: inline-block;
+            background: #f39c12;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+            border-left: 5px solid #3498db;
+            padding-left: 25px;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-icon {
+            font-size: 2.5em;
+        }
+        
+        .subsection {
+            margin: 30px 0;
+            padding: 20px;
+            background: #ecf0f1;
+            border-radius: 8px;
+        }
+        
+        .subsection h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .doc-reference {
+            background: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+        
+        .doc-reference strong {
+            color: #2980b9;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #bdc3c7;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .flag-level {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .flag-box {
+            flex: 1;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #bdc3c7;
+        }
+        
+        .flag-box.level-0 {
+            background: #d5f4e6;
+            border-color: #27ae60;
+        }
+        
+        .flag-box.level-1 {
+            background: #fadbd8;
+            border-color: #e74c3c;
+        }
+        
+        .flag-box h4 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .flag-box ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        
+        .flag-box li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .important {
+            background: #f8d7da;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #dc3545;
+            color: #721c24;
+        }
+        
+        .tip {
+            background: #d1ecf1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #17a2b8;
+            color: #0c5460;
+        }
+        
+        .key-point {
+            font-weight: 600;
+            color: #2c3e50;
+            background: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        
+        .navbar {
+            background: #34495e;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .navbar a:hover {
+            background: #2c3e50;
+        }
+        
+        .footer {
+            background: #34495e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .comparison-box {
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #bdc3c7;
+        }
+        
+        .comparison-box h4 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .flag-level {
+                flex-direction: column;
+            }
+            
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>TOSOH HLC-723G11</h1>
+            <p>Display/Analysis Mode & FLAG Settings Guide</p>
+            <span class="source-badge">📄 Source: Operator's Manual Rev. B & VAR Analysis Guidebook</span>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navbar">
+            <a onclick="scrollToSection('display-mode')">Display Mode</a>
+            <a onclick="scrollToSection('flag-settings')">FLAG Settings</a>
+            <a onclick="scrollToSection('main-screen')">Main Screen</a>
+            <a onclick="scrollToSection('auto-flags')">Auto-Triggered FLAGS</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- SECTION 1: DISPLAY/ANALYSIS MODE -->
+            <div class="section" id="display-mode">
+                <h2><span class="section-icon">🖥️</span>Display/Analysis Mode</h2>
+                
+                <div class="doc-reference">
+                    <strong>Source:</strong> Operator's Manual Rev. B, Section 3.4 (Operation Status) & Section 4.1 (Main Screen)
+                </div>
+
+                <div class="subsection">
+                    <h3>Title Bar Display</h3>
+                    <p>The <span class="key-point">title</span> at the top of the main screen displays the current assay mode in operation.</p>
+                    
+                    <div class="highlight">
+                        <strong>What the manual states:</strong>
+                        <p style="margin-top: 10px;">After the POWER key is pressed, the first screen displayed is the main screen (first screen). <strong>HbA1c / STD ANALYSIS is displayed at the top of the screen.</strong> During analysis, the main screen should remain displayed.</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Mode Information from VAR Analysis Guidebook</h3>
+                    
+                    <div class="doc-reference">
+                        <strong>Source:</strong> G11VarGuidebook.pptx - Appendix-1: Explanation of Main Screen
+                    </div>
+
+                    <p><strong>Title Display Function:</strong> "Displays the assay mode currently in operation"</p>
+
+                    <div class="comparison">
+                        <div class="comparison-box" style="border-left: 5px solid #27ae60;">
+                            <h4>STD ANALYSIS Mode</h4>
+                            <ul style="margin-left: 20px; line-height: 1.8;">
+                                <li>Standard analysis mode</li>
+                                <li>For routine hemoglobin samples</li>
+                                <li>Default display mode</li>
+                                <li>Standard peak detection</li>
+                            </ul>
+                        </div>
+                        <div class="comparison-box" style="border-left: 5px solid #f39c12;">
+                            <h4>VAR ANALYSIS Mode</h4>
+                            <ul style="margin-left: 20px; line-height: 1.8;">
+                                <li>Variant analysis mode</li>
+                                <li>For abnormal hemoglobin variants</li>
+                                <li>Extended peak detection</li>
+                                <li>Identifies unknown peaks</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="important">
+                    <strong>⚠️ Note from Manual:</strong> The operator's manual provided does not explicitly describe the menu path to switch between STD ANALYSIS and VAR ANALYSIS modes. The mode is displayed on the title bar but configuration method is not detailed in the sections extracted.
+                </div>
+
+                <div class="subsection">
+                    <h3>Main Screen Display Components</h3>
+                    
+                    <div class="doc-reference">
+                        <strong>Source:</strong> Operator's Manual Rev. B, Section 4.1 (Main Screen)
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Location</th>
+                                <th>Information Displayed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Title</strong></td>
+                                <td>Top of screen</td>
+                                <td>Displays the assay mode currently in operation (STD ANALYSIS / VAR ANALYSIS)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Program version number</strong></td>
+                                <td>Upper section</td>
+                                <td>Software version</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Current user name and authority</strong></td>
+                                <td>Upper section</td>
+                                <td>SP (Super User) or OP (Operator)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Status</strong></td>
+                                <td>Upper left</td>
+                                <td>Current operation status (WARMING-UP, STAND-BY, ANALYSIS, WASH, COL.WASH, BUFF PRIME, PUMP WASH, PURGING)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Calibration Date</strong></td>
+                                <td>Right side</td>
+                                <td>Date of latest calibration performed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- SECTION 2: FLAG PARAMETER SETTING -->
+            <div class="section" id="flag-settings">
+                <h2><span class="section-icon">🚩</span>FLAG Parameter Setting</h2>
+
+                <div class="doc-reference">
+                    <strong>Source:</strong> Operator's Manual Rev. B, Section 4.21 (FLAG Parameter Setting)
+                </div>
+
+                <div class="subsection">
+                    <h3>What are FLAGS?</h3>
+                    <p>According to the Operator's Manual:</p>
+                    
+                    <div class="highlight">
+                        <strong>"The analyzer checks results according to the flag parameters set on this screen. Flags can be printed with the results."</strong>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Accessing FLAG Settings</h3>
+                    <p>Menu Path: <span class="key-point">[Main screen] → [MENU] → [UTILITIES] → [FLAG key]</span></p>
+                </div>
+
+                <div class="subsection">
+                    <h3>FLAG Screen Display Components</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1. Criteria (code/condition/num. value)</strong></td>
+                                <td>Defines the condition that triggers the flag (e.g., TOTAL AREA < 500)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2. Flag message output</strong></td>
+                                <td>Text message when result meets condition (maximum 16 characters)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3. Flag Level</strong></td>
+                                <td>Controls how result is displayed/reported (Level 0 or Level 1)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4. Flag superiority</strong></td>
+                                <td>Priority ranking 1-20 (larger figure = more superior)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection">
+                    <h3>FLAG Levels - Critical Distinction</h3>
+
+                    <div class="flag-level">
+                        <div class="flag-box level-0">
+                            <h4>✅ LEVEL 0</h4>
+                            <ul>
+                                <li>The assay values <strong>ARE displayed/printed</strong></li>
+                                <li>Values <strong>ARE transmitted to host</strong> with FLAG</li>
+                                <li>Patient sees the actual result</li>
+                                <li>FLAG message included with report</li>
+                            </ul>
+                        </div>
+                        <div class="flag-box level-1">
+                            <h4>❌ LEVEL 1</h4>
+                            <ul>
+                                <li>Shows <strong>"---"</strong> instead of assay result</li>
+                                <li><strong>"0" or blank</strong> transmitted to host</li>
+                                <li>Result NOT reported to patient</li>
+                                <li>FLAG message included with report</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="doc-reference">
+                        <strong>Direct quote from Manual:</strong>
+                        <p style="margin-top: 10px;">"(Level 0: The assay values are displayed/printed or transmitted to the host with Flag.)"</p>
+                        <p>"(Level 1: '---' is displayed or printed in the field of the assay result with Flag. But a blank or '0' is transmitted to the host computer with Flag.)"</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Flag Configuration</h3>
+
+                    <p><strong>Maximum number of flags:</strong> <span class="key-point">Up to 20 flags</span> can be input</p>
+
+                    <div class="important">
+                        <strong>⚠️ RECALC Impact:</strong> The manual states: "For RECALC, the determination is made in accordance with the current FLAG conditions. If you set new FLAG conditions or change them and execute a RECALC, make sure of the settings."
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: AUTO-TRIGGERED FLAGS -->
+            <div class="section" id="auto-flags">
+                <h2><span class="section-icon">⚡</span>Automatic FLAG Messages</h2>
+
+                <div class="doc-reference">
+                    <strong>Source:</strong> Operator's Manual Rev. B, Section 6.3 (Error Messages) & Section 3.9 (Test Result)
+                </div>
+
+                <div class="subsection">
+                    <h3>AREA-Related FLAGS</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>FLAG Message</th>
+                                <th>TOTAL AREA Range</th>
+                                <th>Status</th>
+                                <th>Recommended Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>AREA TOO LOW</strong></td>
+                                <td>&lt; 500</td>
+                                <td>Critical - Below minimum</td>
+                                <td>Re-dilute sample at 1:100 (INCREASE mode in STAT)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>AREA LOW</strong></td>
+                                <td>500-700</td>
+                                <td>Borderline low</td>
+                                <td>Acceptable but monitor</td>
+                            </tr>
+                            <tr>
+                                <td><strong>AREA HIGH</strong></td>
+                                <td>3000-3500</td>
+                                <td>Borderline high</td>
+                                <td>Re-dilute sample at 1:400 (DECREASE mode in STAT)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>AREA TOO HIGH</strong></td>
+                                <td>&gt; 3500-4000</td>
+                                <td>Critical - Exceeds range</td>
+                                <td>Must re-dilute and re-assay</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="doc-reference">
+                        <strong>Manual Reference:</strong> "The acceptable range of TOTAL AREA is from 300 to 1,800. However, highly reliable results can only be obtained in the TOTAL AREA range from 400 to 1,700."
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Other Critical Error Messages</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Error Code</th>
+                                <th>Message</th>
+                                <th>Condition/Cause</th>
+                                <th>Recommended Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>201</strong></td>
+                                <td>CALIB ERROR</td>
+                                <td>Calibration result deviation ≥0.3% between runs OR ±30% from assigned value</td>
+                                <td>Check calibrator preparation, buffer lot matching, column condition, chromatograms</td>
+                            </tr>
+                            <tr>
+                                <td><strong>100</strong></td>
+                                <td>PRESSURE HIGH</td>
+                                <td>Pump pressure exceeds specification by more than +4 MPa of initial pressure</td>
+                                <td>Replace filter first; if persists, replace column</td>
+                            </tr>
+                            <tr>
+                                <td><strong>101</strong></td>
+                                <td>PRESSURE LOW</td>
+                                <td>Air in pump or empty buffer/check valve issue</td>
+                                <td>Execute DRAIN FLUSH or PUMP operation; replace buffer if empty</td>
+                            </tr>
+                            <tr>
+                                <td><strong>221</strong></td>
+                                <td>NOT DETECT [peak name]</td>
+                                <td>Specific hemoglobin peak could not be detected</td>
+                                <td>Check buffer concentration, column age, sample quality. Refer to abnormal chromatograms section</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TP LOW / TP TOO LOW</strong></td>
+                                <td>Theoretical Plate Low</td>
+                                <td>Poor peak shape on sA1c or s-A1c peak becomes broad</td>
+                                <td>May indicate column degradation OR variant hemoglobin patient</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="doc-reference">
+                        <strong>Source:</strong> Operator's Manual Rev. B, Section 6.2 (General System Failures) & Section 6.3 (Error Messages)
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>FLAG Message Printout Example</h3>
+
+                    <p><strong>From Operator's Manual, Section 3.9 (Test Report Interpretation):</strong></p>
+
+                    <div class="highlight">
+                        <p><strong>FLAG message:</strong> "The analyzer evaluates the result and reports messages. If there is any message in this area, results may be incorrect / invalid."</p>
+                    </div>
+
+                    <div class="doc-reference">
+                        <strong>Note:</strong> "If the data meet the conditions specified in the FLAG, the flag code is listed on the LIST screen and printed out to the MK field. The assay result is not printed when the data meets some kind of FLAG."
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: PRACTICAL INFORMATION -->
+            <div class="section" id="main-screen">
+                <h2><span class="section-icon">📋</span>Main Screen Operation Status</h2>
+
+                <div class="doc-reference">
+                    <strong>Source:</strong> Operator's Manual Rev. B, Section 3.4 (Operation Status)
+                </div>
+
+                <div class="subsection">
+                    <h3>Status Indicators</h3>
+
+                    <p>The following status indications are displayed in the upper left of the main screen during analyzer operation:</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Status</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>WARMING-UP</strong></td>
+                                <td>System initialization; pump equilibrates assay lines and analysis column. Automatically equilibrate for approximately 8 minutes after POWER key is pressed.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>STAND-BY</strong></td>
+                                <td>Ready state; pump stopped, Elution Buffer not consumed. System is ready for sample assay.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ANALYSIS</strong></td>
+                                <td>During sample assay; first result approximately 1 minute from sample detection.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>WASH</strong></td>
+                                <td>Post-run column wash cycle.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>COL.WASH</strong></td>
+                                <td>Column wash operation manual execution.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>BUFF PRIME</strong></td>
+                                <td>Buffer priming operation; approximately 5 mL each Buffer 1 & 2 replaced.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>PUMP WASH</strong></td>
+                                <td>Pump wash operation for system maintenance.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>PURGING</strong></td>
+                                <td>Air purging from system after standby period exceeds 70 minutes.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tip">
+                    <strong>💡 Tip from Manual:</strong> "Although the WARMING UP operation can be aborted by pressing the STOP key, always make sure to execute the WARMING UP operation before the first assay of the day to ensure reliable results."
+                </div>
+            </div>
+
+            <!-- SECTION 5: QUICK REFERENCE -->
+            <div class="section">
+                <h2><span class="section-icon">⚙️</span>Key Settings Referenced in Manual</h2>
+
+                <div class="subsection">
+                    <h3>Parameter Settings (Section 4.9)</h3>
+
+                    <p>According to Operator's Manual Section 4.9, various parameters can be configured through the PARAMETER screen, including:</p>
+
+                    <div class="highlight">
+                        <ul style="margin-left: 20px; line-height: 1.8;">
+                            <li>H/W BOTTLE TYPE setting (for 4L bottle hemolysis solution)</li>
+                            <li>WASH MODE (NORMAL or SIMPLE)</li>
+                            <li>LOG-OFF TIMER (delay time before automatic log-off)</li>
+                            <li>CALIB TYPE (NGSP or IFCC units)</li>
+                            <li>Sample number settings</li>
+                            <li>And other analyzer operating conditions</li>
+                        </ul>
+                    </div>
+
+                    <div class="doc-reference">
+                        <strong>Manual note:</strong> "In addition to Super User, Operator can change parameters on this screen. Select the various parameters to change their setting."
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Report Format Options</h3>
+
+                    <p>According to Section 3.9 (Assay Result Display):</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Format Code</th>
+                                <th>Format Name</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>(0)</td>
+                                <td>STD FORM</td>
+                                <td>Standard detailed format with all peak information</td>
+                            </tr>
+                            <tr>
+                                <td>(1)</td>
+                                <td>SIMPLE FORM</td>
+                                <td>Simplified format with main results only</td>
+                            </tr>
+                            <tr>
+                                <td>(3)</td>
+                                <td>STD+R FORM</td>
+                                <td>Standard format with reagent information</td>
+                            </tr>
+                            <tr>
+                                <td>(8)</td>
+                                <td>MNT+R FORM</td>
+                                <td>Maintenance format with reagent tracking</td>
+                            </tr>
+                            <tr>
+                                <td>(9)</td>
+                                <td>MAINTE FORM</td>
+                                <td>Maintenance-focused format</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="doc-reference">
+                        <strong>Manual note:</strong> "For detailed information on printout format, refer to '4.9 Parameter Setting'."
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>📚 Document Information:</strong></p>
+            <p>
+                Source Files: TOSOH HLC-723G11 Operator's Manual (Rev. B) | G11VarGuidebook.pptx<br>
+                Last Updated: August 31, 2026 | Created for Lab Training & Education<br>
+                <strong>⚠️ Always refer to official Operator's Manual for clinical use and standard operating procedures</strong>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
