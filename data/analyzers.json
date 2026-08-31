@@ -140,5 +140,41 @@
                 "url": "TOSOH_HLC723G11_Manual_Guide.html"
             }
         ]
+    },
+    {
+        "id": "mindray_bs_series",
+        "name": "Mindray BS Series",
+        "type": "Hematology Analyzer",
+        "manufacturer": "Shenzhen Mindray Bio-Medical Electronics",
+        "description": "Advanced hematology analyzer series including BS-1000M and BS-2800M models. Complete technical updates with final corrections for accurate blood cell analysis.",
+        "parameters": [
+            "WBC - Total White Blood Cell Count",
+            "RBC - Red Blood Cell Count",
+            "HGB - Hemoglobin",
+            "HCT - Hematocrit",
+            "MCV - Mean Corpuscular Volume",
+            "MCH - Mean Corpuscular Hemoglobin",
+            "MCHC - Mean Corpuscular Hemoglobin Concentration",
+            "PLT - Platelet Count",
+            "WBC Differential - 5-part differential (NEUT, LYMPH, MONO, EOS, BASO)",
+            "RDW - Red Cell Distribution Width",
+            "PDW - Platelet Distribution Width",
+            "MPV - Mean Platelet Volume"
+        ],
+        "troubleshooting": [
+            "Sample condition issues: Verify proper EDTA anticoagulation and mix",
+            "Analyzer calibration: Perform daily QC with controls",
+            "Abnormal results: Review with manual microscopy verification",
+            "System errors: Check reagent levels and perform maintenance cycles",
+            "Carryover concerns: Execute wash cycle between different sample types"
+        ],
+        "notes": "High-precision hematology analyzer with advanced error detection. Supports both routine and STAT sample processing. Complete technical documentation includes final corrections and updates for optimal analyzer performance.",
+        "attachments": [
+            {
+                "name": "📄 Technical Updates & Corrections",
+                "type": "Interactive HTML",
+                "url": "Mindray_COMPLETE_FINAL_ALL_CORRECTIONS.html"
+            }
+        ]
     }
 ]

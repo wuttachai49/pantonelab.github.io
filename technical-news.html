@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical News & Updates - Laboratory Knowledge Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Home</a></li>
+            <li><a href="analyzers.html">🔬 Analyzers</a></li>
+            <li><a href="knowledge.html">📚 Knowledge Base</a></li>
+            <li><a href="projects.html">📋 Projects</a></li>
+            <li><a href="technical-news.html">📰 Technical News</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>📰 Technical News & Updates</h1>
+            <p>Latest analyzer updates, technical corrections, and laboratory innovations</p>
+        </header>
+
+        <div class="content">
+            <h2>Latest Technical Documentation</h2>
+
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="search-news"
+                    class="search-input"
+                    placeholder="Search technical news by analyzer or keyword..."
+                    onkeypress="if(event.key==='Enter') searchNews(this.value)"
+                >
+                <button onclick="searchNews(document.getElementById('search-news').value)">Search</button>
+            </div>
+
+            <div id="news-container" class="card-grid"></div>
+
+            <div id="news-detail" class="detail-view"></div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 PANTONE Medical Laboratory Knowledge Base.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Technical News Data
+        const newsData = [
+            {
+                "id": "mindray_updates",
+                "title": "Mindray Analyzer Technical Updates",
+                "subtitle": "BS-1000M & BS-2800M Complete Corrections",
+                "date": "August 31, 2026",
+                "analyzer": "Mindray BS Series",
+                "description": "Complete technical updates and corrections for Mindray BS-1000M and BS-2800M analyzers with final all corrections included.",
+                "category": "Technical Update",
+                "url": "Mindray_COMPLETE_FINAL_ALL_CORRECTIONS.html"
+            }
+        ];
+
+        // Load and display news on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            displayNews(newsData);
+        });
+
+        function displayNews(news) {
+            const container = document.getElementById('news-container');
+            if (!container) return;
+
+            container.innerHTML = '';
+            if (news.length === 0) {
+                container.innerHTML = '<p>No technical news available.</p>';
+                return;
+            }
+
+            news.forEach(article => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h3>${article.title}</h3>
+                    <p><strong>Analyzer:</strong> ${article.analyzer}</p>
+                    <p><strong>Category:</strong> ${article.category}</p>
+                    <p>${article.description}</p>
+                    <p class="card-meta">📅 ${article.date}</p>
+                    <button onclick="viewNews('${article.id}')">View Details</button>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function viewNews(newsId) {
+            const article = newsData.find(n => n.id === newsId);
+            if (!article) return;
+
+            const detailContainer = document.getElementById('news-detail');
+            if (!detailContainer) return;
+
+            detailContainer.innerHTML = `
+                <h3>${article.title}</h3>
+                <p><strong>Subtitle:</strong> ${article.subtitle}</p>
+                <p><strong>Analyzer:</strong> ${article.analyzer}</p>
+                <p><strong>Category:</strong> ${article.category}</p>
+                <p><strong>Date Published:</strong> ${article.date}</p>
+
+                <h4>Description</h4>
+                <p>${article.description}</p>
+
+                <h4>📎 Full Documentation</h4>
+                <a href="${article.url}" style="display: inline-block; padding: 12px 20px; background: #667eea; color: white; text-decoration: none; border-radius: 5px; text-align: center; font-weight: 500; transition: background 0.3s;" onmouseover="this.style.background='#764ba2'" onmouseout="this.style.background='#667eea'">
+                    📖 Open Full Document
+                </a>
+
+                <button onclick="closeDetail()" style="margin-top: 20px; padding: 10px 20px; background: #bdc3c7; border: none; border-radius: 5px; cursor: pointer;">Close</button>
+            `;
+        }
+
+        function searchNews(query) {
+            if (!query.trim()) {
+                displayNews(newsData);
+                return;
+            }
+            const filtered = newsData.filter(n =>
+                n.title.toLowerCase().includes(query.toLowerCase()) ||
+                n.analyzer.toLowerCase().includes(query.toLowerCase()) ||
+                n.description.toLowerCase().includes(query.toLowerCase()) ||
+                n.category.toLowerCase().includes(query.toLowerCase())
+            );
+            displayNews(filtered);
+        }
+
+        function closeDetail() {
+            const newsDetail = document.getElementById('news-detail');
+            if (newsDetail) newsDetail.innerHTML = '';
+        }
+    </script>
+</body>
+</html>
