@@ -100,5 +100,45 @@
                 "url": "cx-series-hub.html"
             }
         ]
+    },
+    {
+        "id": "tosoh_hlc723g11",
+        "name": "TOSOH HLC-723G11",
+        "type": "Glycohemoglobin Analyzer",
+        "manufacturer": "TOSOH Corporation",
+        "description": "High-performance glycohemoglobin analyzer for HbA1c measurement using HPLC (High-Performance Liquid Chromatography) technology. Supports STD and VAR analysis modes with advanced peak detection.",
+        "parameters": [
+            "HbA1c - Glycated Hemoglobin",
+            "STD ANALYSIS Mode - Standard analysis for routine hemoglobin samples",
+            "VAR ANALYSIS Mode - Variant analysis for abnormal hemoglobin detection",
+            "Total Area - Chromatography integration quality indicator",
+            "Hemoglobin Fractions (FP, A1A, A1B, A1C, F, A0)",
+            "Calibration Factor - Linear equation parameters",
+            "Peak Detection - Advanced identification of unknown peaks"
+        ],
+        "troubleshooting": [
+            "AREA TOO LOW (<500): Re-dilute sample at 1:100 using STAT INCREASE mode",
+            "AREA LOW (500-700): Monitor sample preparation and concentration",
+            "AREA HIGH (3000-3500): Re-dilute sample at 1:400 using STAT DECREASE mode",
+            "AREA TOO HIGH (>3500): Must re-dilute and re-assay immediately",
+            "PRESSURE HIGH (>2 MPa): Check and replace filter after ~600 samples",
+            "PRESSURE LOW: Verify buffer levels, execute DRAIN FLUSH procedure",
+            "CALIB ERROR (>0.3% deviation): Check calibrator/buffer lot matching, verify column condition",
+            "NOT DETECT [peak]: Check buffer concentration, column age, sample quality",
+            "TP LOW/TOO LOW: May indicate column degradation or variant hemoglobin patient"
+        ],
+        "notes": "Highly reliable HbA1c measurement system suitable for diabetes management and screening. Acceptable TOTAL AREA range is 300-1,800 (optimal: 400-1,700). Calibration required before patient sample analysis. Filter replacement at ~600 samples, column replacement at ~2,500 samples. Supports both NGSP and IFCC units.",
+        "attachments": [
+            {
+                "name": "📖 Display Mode & FLAG Settings Guide",
+                "type": "Interactive HTML",
+                "url": "TOSOH-DisplayMode-FLAGS.html"
+            },
+            {
+                "name": "📘 Operation Guide & Manual",
+                "type": "Interactive HTML",
+                "url": "TOSOH_HLC723G11_Manual_Guide.html"
+            }
+        ]
     }
 ]
