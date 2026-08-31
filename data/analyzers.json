@@ -102,6 +102,21 @@
                 "name": "🎓 CX Series Complete Training Hub",
                 "type": "Interactive HTML",
                 "url": "cx-series-documentation.html"
+            },
+            {
+                "name": "📁 CX Series Documentation Portal",
+                "type": "Interactive HTML",
+                "url": "cx-series-documentation/index.html"
+            },
+            {
+                "name": "📘 CX-Series Complete Technical Document",
+                "type": "Interactive HTML",
+                "url": "cx-series-documentation/CX-Series_Complete_Technical_Document.html"
+            },
+            {
+                "name": "🔍 CX-Series Detection Methods",
+                "type": "Interactive HTML",
+                "url": "cx-series-documentation/CX-Series_Detection_Methods.html"
             }
         ]
     },
