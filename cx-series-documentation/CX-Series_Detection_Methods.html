@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CX-Series Detection Methods & Wavelengths</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; color: #333; line-height: 1.6; background: #f5f5f5; }
+        .header { background: linear-gradient(135deg, #065A82 0%, #02C39A 100%); color: white; padding: 40px 20px; text-align: center; }
+        .header h1 { font-size: 36px; margin-bottom: 10px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .section { background: white; margin: 20px 0; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-left: 5px solid #065A82; }
+        .section h2 { color: #065A82; font-size: 28px; margin-bottom: 20px; }
+        .section h3 { color: #1C7293; font-size: 20px; margin-top: 25px; margin-bottom: 15px; }
+        .section h4 { color: #02C39A; font-size: 16px; margin-top: 15px; margin-bottom: 10px; font-weight: bold; }
+        .method-box { background: #f0f8fb; border-left: 4px solid #02C39A; padding: 20px; margin: 15px 0; border-radius: 5px; }
+        .parameter-card { background: linear-gradient(135deg, #f0f8fb 0%, #e8f5e9 100%); border: 2px solid #1C7293; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .wavelength-highlight { background: #fff3cd; padding: 12px; border-radius: 5px; border-left: 4px solid #ffc107; margin: 10px 0; font-weight: bold; }
+        .wavelength-box { background: linear-gradient(135deg, #fff3cd 0%, #fffacd 100%); padding: 15px; margin: 15px 0; border-radius: 5px; border-left: 4px solid #ffc107; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: white; }
+        .comparison-table th { background: #065A82; color: white; padding: 12px; text-align: left; font-weight: bold; }
+        .comparison-table td { padding: 12px; border-bottom: 1px solid #ddd; }
+        .comparison-table tr:nth-child(even) { background: #f9f9f9; }
+        .detection-method { background: white; border: 2px solid #1C7293; padding: 20px; margin: 15px 0; border-radius: 8px; }
+        .principle-box { background: linear-gradient(135deg, #fff3cd 0%, #fffacd 100%); border-left: 4px solid #ffc107; padding: 20px; margin: 20px 0; border-radius: 5px; }
+        .spectrum-visual { background: white; border: 2px solid #ddd; padding: 20px; margin: 20px 0; border-radius: 8px; text-align: center; font-family: monospace; }
+        .uv-vis { background: linear-gradient(to right, #9c27b0, #2196f3, #4caf50, #ffeb3b, #ff9800, #f44336); padding: 20px; margin: 20px 0; border-radius: 5px; color: white; text-align: center; font-weight: bold; }
+        .footer { text-align: center; padding: 30px; color: #666; font-size: 14px; }
+        .highlight { background: linear-gradient(135deg, #fff3cd 0%, #fffacd 100%); padding: 15px; border-radius: 5px; margin: 15px 0; border-left: 4px solid #ffc107; }
+        table.wavelengths { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        table.wavelengths th { background: #02C39A; color: white; padding: 12px; text-align: left; }
+        table.wavelengths td { padding: 12px; border-bottom: 1px solid #ddd; }
+        table.wavelengths tr:nth-child(even) { background: #f9f9f9; }
+        .optical-principle { background: #e3f2fd; border-left: 4px solid #2196f3; padding: 20px; margin: 20px 0; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🔬 CX-Series Detection Methods & Wavelengths</h1>
+    <p>Optical Detection Technology for Coagulation Testing</p>
+</div>
+
+<div class="container">
+
+<div class="section">
+    <h2>📊 Overview: Optical Detection Systems</h2>
+
+    <p>CX-Series analyzers use <strong>turbidimetric/kinetic optical detection</strong> to measure clot formation. As fibrin monomer polymerizes into a clot, light absorbance changes, which the analyzer detects in real-time using multiple wavelengths.</p>
+
+    <h3>CX-6000 vs CX-9000 Wavelength Specifications</h3>
+
+    <div class="wavelength-box">
+        <h4>CX-6000 Optical Channels</h4>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li><strong>405 nm (Violet):</strong> Primary coagulation testing wavelength</li>
+            <li><strong>575 nm (Yellow-Green):</strong> Secondary measurement & reference</li>
+            <li><strong>660 nm (Red):</strong> Alternative wavelength for specific assays</li>
+        </ul>
+    </div>
+
+    <div class="wavelength-box">
+        <h4>CX-9000 Optical Channels (Enhanced)</h4>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li><strong>405 nm (Violet):</strong> Primary coagulation testing wavelength</li>
+            <li><strong>545 nm (Green):</strong> Optimized secondary measurement</li>
+            <li><strong>660 nm (Red):</strong> Extended range measurement</li>
+            <li><strong>800 nm (Near-Infrared):</strong> Advanced optical flexibility (CX-9000 exclusive)</li>
+        </ul>
+    </div>
+
+    <div class="highlight">
+        <strong>CX-9000 Advantage:</strong> The 800nm infrared channel provides superior optical clarity for hemolytic, icteric, or lipemic samples — a clinical advantage competitors lack.
+    </div>
+</div>
+
+<div class="section">
+    <h2>🎯 Three Optical Detection Methods</h2>
+
+    <div class="detection-method">
+        <h3>Method 1: Threshold Detection</h3>
+        <p><strong>How it works:</strong> The analyzer detects when light absorbance crosses a specific threshold value during clot formation.</p>
+        <p><strong>What it measures:</strong> Time until absorbance change reaches a preset threshold (faster, simpler)</p>
+        <p><strong>Best for:</strong> Quick screening tests, high-throughput protocols</p>
+        <p><strong>Sensitivity:</strong> Moderate - detects obvious clot formation</p>
+        <p><strong>Used in:</strong> PT (some protocols), rapid screening assays</p>
+    </div>
+
+    <div class="detection-method">
+        <h3>Method 2: 1st Derivative (Rate) Detection</h3>
+        <p><strong>How it works:</strong> Calculates the rate of change (dA/dt) of light absorbance over time</p>
+        <p><strong>What it measures:</strong> Maximum speed of absorbance change during fibrin polymerization</p>
+        <p><strong>Best for:</strong> More sensitive detection of early fibrin formation</p>
+        <p><strong>Sensitivity:</strong> High - catches subtle changes in clot kinetics</p>
+        <p><strong>Used in:</strong> APPT, Fibrinogen, Thrombin Time (most coagulation tests)</p>
+        <p><strong>Advantage:</strong> More reliable than threshold, fewer false results</p>
+    </div>
+
+    <div class="detection-method">
+        <h3>Method 3: 2nd Derivative (Acceleration) Detection</h3>
+        <p><strong>How it works:</strong> Analyzes the acceleration/deceleration (d²A/dt²) of absorbance change</p>
+        <p><strong>What it measures:</strong> The inflection point where fibrin polymerization peaks</p>
+        <p><strong>Best for:</strong> Most sensitive detection of clot formation onset</p>
+        <p><strong>Sensitivity:</strong> Very High - detects earliest fibrin formation</p>
+        <p><strong>Used in:</strong> APPT (optimal), specialized clotting studies</p>
+        <p><strong>Advantage:</strong> Minimizes interference from background turbidity, most accurate kinetics</p>
+    </div>
+
+    <div class="optical-principle">
+        <h4>📈 Visual Comparison of Detection Methods</h4>
+        <p><strong>Threshold:</strong> Simple on/off signal → Crosses line → Test done ❌ Early</p>
+        <p><strong>1st Derivative:</strong> Catches rate change → Peak velocity → More accurate ✓✓</p>
+        <p><strong>2nd Derivative:</strong> Catches acceleration peak → Finest kinetic detail → Most accurate ✓✓✓</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>🧪 CX-Series Parameters: Detection Methods & Wavelengths</h2>
+
+    <div class="parameter-card">
+        <h3>1. PT (Prothrombin Time)</h3>
+        <p><strong>Clinical Significance:</strong> Extrinsic pathway + common pathway (4 factors: VII → X → V → II)</p>
+
+        <h4>🎨 Detection Method</h4>
+        <p><strong>Primary Method:</strong> 1st Derivative (Rate Detection)</p>
+        <p><strong>Alternative:</strong> Threshold Detection (for rapid results)</p>
+
+        <div class="wavelength-highlight">
+            <strong>CX-6000 Wavelengths:</strong><br>
+            405 nm (primary) + 575 nm (reference)
+        </div>
+
+        <div class="wavelength-highlight">
+            <strong>CX-9000 Wavelengths:</strong><br>
+            405 nm (primary) + 545 nm (optimized secondary)
+        </div>
+
+        <h4>How It Works</h4>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>Patient plasma + Tissue Factor (TF) + Calcium → triggers extrinsic pathway</li>
+            <li>Analyzer monitors light absorbance at <strong>405nm</strong> (violet light)</li>
+            <li>Fibrin polymer formation increases optical density (turbidity)</li>
+            <li>1st Derivative detects peak rate of change = PT result (10-13 sec normal)</li>
+            <li>575nm used as optical reference to correct for sample interference</li>
+        </ul>
+
+        <h4>Why Multiple Wavelengths?</h4>
+        <p>405nm is ideal for coagulation (optimal fibrin absorbance). 575nm helps eliminate interference from hemolysis or other optical artifacts.</p>
+    </div>
+
+    <div class="parameter-card">
+        <h3>2. APPT (Activated Partial Thromboplastin Time)</h3>
+        <p><strong>Clinical Significance:</strong> Intrinsic pathway + common pathway (7 factors: XII → XI → IX → X → V → II)</p>
+
+        <h4>🎨 Detection Method</h4>
+        <p><strong>Primary Method:</strong> 2nd Derivative (Acceleration Detection) ⭐ MOST SENSITIVE</p>
+        <p><strong>Why 2nd Derivative:</strong> APPT is most sensitive to mild clotting defects. 2nd derivative catches the earliest fibrin formation signals.</p>
+
+        <div class="wavelength-highlight">
+            <strong>CX-6000 Wavelengths:</strong><br>
+            405 nm (primary) + 660 nm (extended range)
+        </div>
+
+        <div class="wavelength-highlight">
+            <strong>CX-9000 Wavelengths:</strong><br>
+            405 nm (primary) + 545 nm (optimized) + 800 nm (NIR for hemolytic samples)
+        </div>
+
+        <h4>How It Works</h4>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>Patient plasma + Partial Thromboplastin (phospholipid) + Activator (kaolin) → intrinsic pathway</li>
+            <li>Analyzer monitors <strong>405nm</strong> light absorbance continuously</li>
+            <li>2nd Derivative detects inflection point = earliest fibrin polymerization = APPT (25-35 sec normal)</li>
+            <li>CX-9000's 800nm infrared provides enhanced detection in difficult samples (hemolytic, icteric, lipemic)</li>
+        </ul>
+
+        <h4>CX-9000 Exclusive Advantage</h4>
+        <p>The <strong>800nm near-infrared channel</strong> allows APPT testing in hemolytic samples where competitors fail. This is a significant clinical advantage.</p>
+    </div>
+
+    <div class="parameter-card">
+        <h3>3. Fibrinogen</h3>
+        <p><strong>Clinical Significance:</strong> Measures clotting factor I (2-4 g/L normal)</p>
+
+        <h4>🎨 Detection Method</h4>
+        <p><strong>Primary Method:</strong> 1st Derivative (Rate Detection)</p>
+        <p><strong>Why:</strong> Fibrinogen has unique kinetics - measures rate of thrombin-fibrin interaction</p>
+
+        <div class="wavelength-highlight">
+            <strong>CX-6000 & CX-9000:</strong><br>
+            405 nm (primary) with optical reference wavelengths
+        </div>
+
+        <h4>How It Works</h4>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>Patient plasma + Thrombin (directly activates fibrinogen) → fibrin polymerization</li>
+            <li>No cascade pathway - pure fibrinogen-to-fibrin conversion</li>
+            <li>Analyzer monitors 405nm absorbance rate change</li>
+            <li>Speed of absorbance increase = fibrinogen concentration</li>
+            <li>Slower rate = low fibrinogen (DIC, liver disease, dilution)</li>
+        </ul>
+
+        <h4>Special Note</h4>
+        <p>Fibrinogen testing is more straightforward than PT/APPT because it bypasses the entire coagulation cascade. Direct thrombin addition means simpler kinetics = more reliable 1st derivative detection.</p>
+    </div>
+
+    <div class="parameter-card">
+        <h3>4. Thrombin Time (TT)</h3>
+        <p><strong>Clinical Significance:</strong> Measures fibrinogen quality & quantity + direct thrombin inhibitors</p>
+
+        <h4>🎨 Detection Method</h4>
+        <p><strong>Primary Method:</strong> 1st Derivative (Rate Detection)</p>
+        <p><strong>Rationale:</strong> Similar to fibrinogen - direct thrombin measurement</p>
+
+        <div class="wavelength-highlight">
+            <strong>CX-6000 & CX-9000:</strong><br>
+            405 nm (primary measurement wavelength)
+        </div>
+
+        <h4>How It Works</h4>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>Patient plasma + Thrombin reagent → fibrin formation</li>
+            <li>Measures time (or rate) of fibrin polymerization</li>
+            <li>Detects fibrinogen abnormalities (dysfibrinogenemia)</li>
+            <li>Detects direct thrombin inhibitors (dabigatran)</li>
+            <li>405nm detects fibrin clot formation kinetics (11-16 sec normal)</li>
+        </ul>
+    </div>
+
+    <div class="parameter-card">
+        <h3>5. D-Dimer</h3>
+        <p><strong>Clinical Significance:</strong> Fibrin degradation marker (rule out thromboembolism)</p>
+
+        <h4>🎨 Detection Method</h4>
+        <p><strong>Primary Method:</strong> Immunoturbidimetric with 1st Derivative</p>
+        <p><strong>Why Different:</strong> D-Dimer uses monoclonal antibodies that bind to D-Dimer epitopes</p>
+
+        <div class="wavelength-highlight">
+            <strong>CX-6000 & CX-9000:</strong><br>
+            405 nm + optical reference wavelengths
+        </div>
+
+        <h4>How It Works</h4>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>Patient plasma + D-Dimer specific antibodies (magnetic particles)</li>
+            <li>Antibody-D-Dimer complex causes visible light absorbance change</li>
+            <li>Analyzer measures 405nm absorbance increase = agglutination reaction</li>
+            <li>1st Derivative detects rate of particle agglutination</li>
+            <li>Concentration proportional to D-Dimer level (< 0.5 µg/mL normal)</li>
+        </ul>
+
+        <h4>Special Note: Immunoassay Method</h4>
+        <p>Unlike PT/APPT/Fibrinogen which are coagulation cascade tests, D-Dimer is an immunoassay. It still uses turbidimetric detection at 405nm, but measures antibody-antigen binding instead of enzymatic clot formation.</p>
+    </div>
+
+    <div class="parameter-card">
+        <h3>6. FDP (Fibrin Degradation Products)</h3>
+        <p><strong>Clinical Significance:</strong> Markers of active fibrinolysis (DIC, sepsis, liver disease)</p>
+
+        <h4>🎨 Detection Method</h4>
+        <p><strong>Primary Method:</strong> Immunoturbidimetric with 1st Derivative</p>
+        <p><strong>Similar to:</strong> D-Dimer (immunoassay approach)</p>
+
+        <div class="wavelength-highlight">
+            <strong>CX-6000 & CX-9000:</strong><br>
+            405 nm + optical reference
+        </div>
+
+        <h4>How It Works</h4>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>Patient plasma + FDP-specific antibodies (reagent particles)</li>
+            <li>Plasmin breaks down fibrin → releases D-dimer, E-dimer, X-dimer, Y-dimer fragments</li>
+            <li>Antibodies bind these fragments → visible agglutination</li>
+            <li>405nm measures agglutination turbidity increase</li>
+            <li>1st Derivative detects particle aggregation rate</li>
+            <li>FDP level indicates active fibrinolysis (< 5 µg/mL normal)</li>
+        </ul>
+
+        <h4>Clinical Context</h4>
+        <p>FDP is less specific than D-Dimer but can be elevated in active bleeding/clotting states. CX-9000's multiple wavelengths help distinguish true FDP elevation from optical interference.</p>
+    </div>
+
+    <div class="parameter-card">
+        <h3>7. AT-III (Antithrombin III)</h3>
+        <p><strong>Clinical Significance:</strong> Natural anticoagulant protein (80-120% normal, <60% suggests thrombosis risk)</p>
+
+        <h4>🎨 Detection Method</h4>
+        <p><strong>Primary Method:</strong> Chromogenic substrate with 1st Derivative</p>
+        <p><strong>Why Different:</strong> AT-III is measured via thrombin inhibition kinetics, not fibrin formation</p>
+
+        <div class="wavelength-highlight">
+            <strong>CX-6000 & CX-9000:</strong><br>
+            405 nm (colorimetric detection of substrate cleavage)
+        </div>
+
+        <h4>How It Works</h4>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>Patient plasma + Thrombin + Chromogenic substrate (pNA-labeled)</li>
+            <li>AT-III binds to thrombin → inactivates it</li>
+            <li>Uninhibited thrombin cleaves chromogenic substrate → yellow color (pNA release)</li>
+            <li>More AT-III = more thrombin inactivated = LESS color change = LOWER absorbance</li>
+            <li>405nm detects yellow chromogenic product concentration (inverse relationship)</li>
+            <li>1st Derivative measures rate of color development (substrate cleavage rate)</li>
+        </ul>
+
+        <h4>Important Principle</h4>
+        <p><strong>Inverse measurement:</strong> Unlike other tests, AT-III is measured by ABSENCE of color development. Low AT-III = MORE thrombin activity = MORE color = HIGHER absorbance.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h2>📋 Detection Method Summary Table</h2>
+
+    <table class="wavelengths">
+        <tr>
+            <th>Parameter</th>
+            <th>Primary Detection Method</th>
+            <th>Optical Principle</th>
+            <th>CX-6000 Wavelengths</th>
+            <th>CX-9000 Wavelengths</th>
+        </tr>
+        <tr>
+            <td><strong>PT</strong></td>
+            <td>1st Derivative</td>
+            <td>Fibrin polymerization rate</td>
+            <td>405nm + 575nm</td>
+            <td>405nm + 545nm</td>
+        </tr>
+        <tr>
+            <td><strong>APPT</strong></td>
+            <td>2nd Derivative ⭐</td>
+            <td>Fibrin acceleration (most sensitive)</td>
+            <td>405nm + 660nm</td>
+            <td>405nm + 545nm + 800nm</td>
+        </tr>
+        <tr>
+            <td><strong>Fibrinogen</strong></td>
+            <td>1st Derivative</td>
+            <td>Thrombin-fibrin kinetics</td>
+            <td>405nm</td>
+            <td>405nm</td>
+        </tr>
+        <tr>
+            <td><strong>Thrombin Time</strong></td>
+            <td>1st Derivative</td>
+            <td>Direct fibrin formation</td>
+            <td>405nm</td>
+            <td>405nm</td>
+        </tr>
+        <tr>
+            <td><strong>D-Dimer</strong></td>
+            <td>1st Derivative</td>
+            <td>Immunoturbidimetric</td>
+            <td>405nm</td>
+            <td>405nm</td>
+        </tr>
+        <tr>
+            <td><strong>FDP</strong></td>
+            <td>1st Derivative</td>
+            <td>Immunoturbidimetric</td>
+            <td>405nm</td>
+            <td>405nm</td>
+        </tr>
+        <tr>
+            <td><strong>AT-III</strong></td>
+            <td>1st Derivative</td>
+            <td>Chromogenic substrate</td>
+            <td>405nm</td>
+            <td>405nm</td>
+        </tr>
+    </table>
+</div>
+
+<div class="section">
+    <h2>🌈 Wavelength Spectrum Explanation</h2>
+
+    <div class="uv-vis">
+        UV | VIOLET | BLUE | GREEN | YELLOW | ORANGE | RED | NIR
+    </div>
+
+    <h3>Why 405nm (Violet) for Coagulation?</h3>
+    <ul style="margin-left: 20px;">
+        <li><strong>Fibrin absorption peak:</strong> 405nm is at the optimal absorbance wavelength for fibrin clots</li>
+        <li><strong>Optimal signal:</strong> Provides strongest optical contrast between plasma and fibrin</li>
+        <li><strong>Reduced scatter:</strong> Shorter wavelengths (UV/violet) minimize light scattering from RBCs & platelets</li>
+        <li><strong>Clinical standard:</strong> All automated coagulation analyzers use ~405nm as primary</li>
+    </ul>
+
+    <h3>Secondary Wavelengths Purpose</h3>
+    <ul style="margin-left: 20px;">
+        <li><strong>545-575nm (Green-Yellow):</strong> Reference channel to detect sample interference (hemolysis, lipemia, icterus)</li>
+        <li><strong>660nm (Red):</strong> Extended range measurement, alternative for difficult samples</li>
+        <li><strong>800nm (NIR - CX-9000 only):</strong> Near-infrared provides enhanced penetration in hemolytic samples</li>
+    </ul>
+
+    <div class="highlight">
+        <strong>CX-9000 Competitive Advantage:</strong> The 800nm near-infrared channel is NOT available on competitors. This allows CX-9000 to test hemolytic samples (high bilirubin, high hemoglobin) that would produce invalid results on other analyzers. This is a clinical selling point.
+    </div>
+</div>
+
+<div class="section">
+    <h2>🔧 Technical Specifications: CX-Series Optical Systems</h2>
+
+    <div class="comparison-table">
+        <tr style="background: #065A82; color: white;">
+            <th style="color: white;">Specification</th>
+            <th style="color: white;">CX-6000</th>
+            <th style="color: white;">CX-9000</th>
+        </tr>
+        <tr>
+            <td><strong>Optical Detection Type</strong></td>
+            <td>Turbidimetric/Kinetic</td>
+            <td>Turbidimetric/Kinetic</td>
+        </tr>
+        <tr>
+            <td><strong>Primary Wavelength</strong></td>
+            <td>405 nm</td>
+            <td>405 nm</td>
+        </tr>
+        <tr>
+            <td><strong>Secondary Wavelength</strong></td>
+            <td>575 nm</td>
+            <td>545 nm</td>
+        </tr>
+        <tr>
+            <td><strong>Tertiary Wavelength</strong></td>
+            <td>660 nm</td>
+            <td>660 nm</td>
+        </tr>
+        <tr>
+            <td><strong>4th Wavelength (NIR)</strong></td>
+            <td>❌ Not available</td>
+            <td>✅ 800 nm (exclusive)</td>
+        </tr>
+        <tr>
+            <td><strong>Detection Methods Available</strong></td>
+            <td>Threshold, 1st Derivative</td>
+            <td>Threshold, 1st Derivative, 2nd Derivative</td>
+        </tr>
+        <tr>
+            <td><strong>Cuvette Type</strong></td>
+            <td>Disposable plastic</td>
+            <td>Disposable plastic</td>
+        </tr>
+        <tr>
+            <td><strong>Temperature Control</strong></td>
+            <td>37°C ± 0.5°C</td>
+            <td>37°C ± 0.2°C (more precise)</td>
+        </tr>
+        <tr>
+            <td><strong>Light Path</strong></td>
+            <td>2 wavelengths simultaneous</td>
+            <td>4 wavelengths simultaneous</td>
+        </tr>
+        <tr>
+            <td><strong>Hemolysis Tolerance</strong></td>
+            <td>Moderate (up to ~300 mg/dL)</td>
+            <td>Excellent (up to ~500 mg/dL with 800nm)</td>
+        </tr>
+    </table>
+</div>
+
+<div class="section" style="background: linear-gradient(135deg, #065A82 0%, #1C7293 100%); color: white; border-left: none;">
+    <h2 style="color: white;">Why Detection Methods Matter for Clinical Labs</h2>
+    <ul style="margin-left: 20px; margin-top: 15px;">
+        <li><strong>Accuracy:</strong> 2nd Derivative (APPT) catches subtle clotting defects others miss</li>
+        <li><strong>Reliability:</strong> Multiple wavelengths = fewer invalid results from hemolysis/lipemia</li>
+        <li><strong>Clinical Outcomes:</strong> Fewer false negatives means better patient safety</li>
+        <li><strong>Lab Efficiency:</strong> Fewer re-runs = faster turnaround = better lab workflow</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>📞 Sales Talking Points</h2>
+
+    <h3>For Hospital Labs</h3>
+    <ul style="margin-left: 20px;">
+        <li>"CX-9000's 800nm wavelength eliminates failed tests in hemolytic patients"</li>
+        <li>"2nd Derivative detection catches mild clotting disorders competitors miss"</li>
+        <li>"120-minute APPT incubation + 2nd Derivative = industry's most sensitive mixing study"</li>
+    </ul>
+
+    <h3>For Point-of-Care Teams</h3>
+    <ul style="margin-left: 20px;">
+        <li>"Four simultaneous wavelengths = faster result generation"</li>
+        <li>"Built-in reference wavelengths = fewer invalid samples to re-test"</li>
+        <li>"Optical sophistication rivals laboratory-grade analyzers"</li>
+    </ul>
+
+    <h3>For Decision Makers</h3>
+    <ul style="margin-left: 20px;">
+        <li>"Advanced optical detection = clinically superior results"</li>
+        <li>"Fewer re-runs save time and reagent costs"</li>
+        <li>"CX-9000's wavelength range handles difficult samples automatically"</li>
+    </ul>
+</div>
+
+</div>
+
+<div class="footer">
+    <p><strong>CX-Series Detection Methods & Wavelengths Guide</strong></p>
+    <p>Optical detection technology explained for laboratory professionals and equipment managers</p>
+    <p style="margin-top: 20px; color: #999;">Technical Reference | June 2026 | Confidential Sales Material</p>
+</div>
+
+</body>
+</html>
