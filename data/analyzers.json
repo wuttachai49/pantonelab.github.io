@@ -63,7 +63,12 @@
             "name": "📖 Bricyte E6 Reference Guide",
             "type": "Interactive HTML",
             "url": "database/bricyte-e6.html"
-             }
+        },
+        {
+            "name": "📚 Bricyte E6 Complete Guide",
+            "type": "Interactive HTML",
+            "url": "Bricyte_guide.html"
+        }
     ]
 },
     {
