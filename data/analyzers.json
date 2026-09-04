@@ -154,6 +154,11 @@
         "notes": "Highly reliable HbA1c measurement system suitable for diabetes management and screening. Acceptable TOTAL AREA range is 300-1,800 (optimal: 400-1,700). Calibration required before patient sample analysis. Filter replacement at ~600 samples, column replacement at ~2,500 samples. Supports both NGSP and IFCC units.",
         "attachments": [
             {
+                "name": "⭐ HLC-723G11 | HbA1c HPLC ALL Detail",
+                "type": "Interactive HTML",
+                "url": "hlc-723g11-hba1c-detail.html"
+            },
+            {
                 "name": "📖 Display Mode & FLAG Settings Guide",
                 "type": "Interactive HTML",
                 "url": "TOSOH-DisplayMode-FLAGS.html"
