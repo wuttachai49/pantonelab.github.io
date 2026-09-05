@@ -25,6 +25,44 @@
         "notes": "Critical for ICU and emergency departments. Understand acid-base compensation mechanisms for clinical interpretation."
     },
     {
+        "id": "gastat700",
+        "name": "Gastat700 Series",
+        "type": "Blood Gas Analyzer",
+        "manufacturer": "Radiometer",
+        "description": "Advanced blood gas analyzer for rapid acid-base, electrolyte, and blood gas measurement. Comprehensive field guide with full operational details and maintenance procedures.",
+        "parameters": [
+            "pH - Hydrogen ion concentration",
+            "pCO2 - Partial pressure of carbon dioxide",
+            "pO2 - Partial pressure of oxygen",
+            "HCO3- - Bicarbonate",
+            "TCO2 - Total carbon dioxide",
+            "BE - Base Excess",
+            "SaO2 - Oxygen saturation",
+            "K+ - Potassium",
+            "Na+ - Sodium",
+            "Cl- - Chloride",
+            "iCa2+ - Ionized calcium",
+            "Glucose - Blood glucose",
+            "Lactate - Lactic acid"
+        ],
+        "troubleshooting": [
+            "Air bubbles in sample: Remove immediately, maintain anaerobic conditions",
+            "Delayed analysis: Apply ice bath if analysis delay > 15 minutes",
+            "Calibration errors: Verify calibrator function and electrode performance",
+            "Out-of-range results: Check electrode calibration and sample quality",
+            "Temperature variations: Maintain consistent sample and analyzer temperature",
+            "Pressure discrepancies: Verify barometric pressure setting"
+        ],
+        "notes": "Professional blood gas analyzer designed for clinical laboratory and point-of-care testing. Provides comprehensive acid-base, electrolyte, and metabolite analysis. Includes full field guide with operational procedures, maintenance protocols, and troubleshooting guidance. Critical for ICU, emergency, and respiratory departments.",
+        "attachments": [
+            {
+                "name": "⭐ Gastat700 Series | FULL Detail",
+                "type": "Interactive HTML",
+                "url": "gastat700-field-guide.html"
+            }
+        ]
+    },
+    {
     "id": "bricyte_e6",
     "name": "Bricyte E6",
     "type": "Hematology Analyzer",
