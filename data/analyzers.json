@@ -248,5 +248,39 @@
                 "url": "Mindray_COMPLETE_FINAL_ALL_CORRECTIONS.html"
             }
         ]
+    },
+    {
+        "id": "mindray_chemistry",
+        "name": "Mindray Chemistry Analyzers",
+        "type": "Clinical Chemistry Analyzer",
+        "manufacturer": "Shenzhen Mindray Bio-Medical Electronics",
+        "description": "Scalable biochemistry and clinical chemistry solutions with modular design. Features innovative HIL (Hemolysis, Ictorus, Lipemia) detection, abnormal reaction identification, and intelligent auto-rerun. Supports over 1,000 tests per day with flexible immunoassay and chemistry integration.",
+        "parameters": [
+            "Fast Response Time - 1-minute quick response capability",
+            "Quick Report - 8-minute emergency test report",
+            "HIL Detection - Hemolysis, Ictorus, Lipemia qualitative & quantitative measurement",
+            "Abnormal Reaction Identification - Real-time reaction monitoring",
+            "Intelligent Auto-Rerun - Automatic rerun for abnormal processes",
+            "Linearity Extension - Extended measurement range capability",
+            "Modular Design - Flexible chemistry and immunoassay modules",
+            "High Throughput - Over 1,000 tests per day capacity",
+            "Immunoassay Integration - Combined biochemistry and immunochemistry capability"
+        ],
+        "troubleshooting": [
+            "Abnormal reaction detected: System triggers intelligent auto-rerun automatically",
+            "False low results: Linearity extension function activated for extended range",
+            "Sample quality issues: HIL detection identifies hemolysis, ictorus, or lipemia",
+            "Turnaround time optimization: Check modular configuration for maximum efficiency",
+            "Integration workflow: Verify chemistry and immunoassay module settings",
+            "Reagent compatibility: Ensure proper reagent lot matching and storage conditions"
+        ],
+        "notes": "Innovative clinical chemistry solution with powerful integration capabilities. Features real-time abnormal reaction identification without false results. Supports flexible modular combination of chemistry and immunoassay for maximum laboratory productivity. Includes quantitative HIL detection (Hemolysis, Ictorus, Lipemia) without additional reagents. Ideal for core laboratories requiring scalable capacity and fast turnaround time with improved patient care quality.",
+        "attachments": [
+            {
+                "name": "⭐ Pack Insert Chem | Explain Detail",
+                "type": "Interactive HTML",
+                "url": "pack-insert-chem-detail.html"
+            }
+        ]
     }
 ]
