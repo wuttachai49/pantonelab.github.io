@@ -238,6 +238,11 @@
         "notes": "High-precision hematology analyzer with advanced error detection. Supports both routine and STAT sample processing. Complete technical documentation includes final corrections and updates for optimal analyzer performance.",
         "attachments": [
             {
+                "name": "⭐ Pack Insert Chem | Explain Detail",
+                "type": "Interactive HTML",
+                "url": "pack-insert-chem-detail.html"
+            },
+            {
                 "name": "📄 Technical Updates & Corrections",
                 "type": "Interactive HTML",
                 "url": "Mindray_COMPLETE_FINAL_ALL_CORRECTIONS.html"
