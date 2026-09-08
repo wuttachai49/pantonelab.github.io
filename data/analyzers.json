@@ -246,5 +246,38 @@
                 "url": "Mindray_COMPLETE_FINAL_ALL_CORRECTIONS.html"
             }
         ]
+    },
+    {
+        "id": "fa_n_hemoculture",
+        "name": "FA-N Hemoculture System",
+        "type": "Automated Blood Culture Analyzer",
+        "manufacturer": "bioMérieux",
+        "description": "Advanced automated hemoculture system for rapid detection and identification of bloodborne pathogens. Features innovative detection technology with comprehensive application specialist guidance for optimal laboratory performance.",
+        "parameters": [
+            "Automated Detection - Real-time pathogen detection capability",
+            "Rapid Results - Accelerated time-to-result for critical patient care",
+            "Sensitivity - Enhanced detection sensitivity for difficult-to-culture organisms",
+            "Specificity - High specificity to reduce false positives",
+            "Multiple Bottles - Simultaneous incubation and monitoring capability",
+            "Temperature Control - Precise incubation temperature management",
+            "Sample Tracking - Comprehensive barcode identification system",
+            "Result Reporting - Automated result generation and reporting"
+        ],
+        "troubleshooting": [
+            "No detection signal: Verify incubation temperature and sensor function",
+            "False positives: Check media sterility and inoculation technique",
+            "Delayed detection: Review specimen collection and transport conditions",
+            "Contamination issues: Verify aseptic technique and bottle integrity",
+            "Communication errors: Check system connectivity and network settings",
+            "Reagent issues: Verify reagent lot numbers and expiration dates"
+        ],
+        "notes": "Specialized automated hemoculture system designed for rapid and reliable detection of bloodborne infections. Critical for sepsis diagnosis and antimicrobial stewardship in clinical microbiology laboratories. Includes comprehensive application specialist guidance for setup, operation, and quality management. Essential tool for emergency departments, ICUs, and infectious disease management.",
+        "attachments": [
+            {
+                "name": "⭐ FA-N Hemoculture | Application Guide",
+                "type": "Interactive HTML",
+                "url": "fa-n-hemoculture-guide.html"
+            }
+        ]
     }
 ]
