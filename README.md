@@ -24,10 +24,10 @@ Complete specifications, parameters, troubleshooting guides, and technical docum
 
 #### 🧬 **Hematology**
 - **Bricyte E6** - Flow cytometry hematology analyzer (Mindray)
+- **CAL6000 with MC** - Advanced multi-channel hematology analyzer
 
 #### 🧪 **Clinical Chemistry**
 - **Mindray Chemistry Analyzers** - Scalable biochemistry solutions with HIL detection
-- **CAL6000 with MC** - Advanced multi-channel clinical chemistry analyzer
 
 #### 🧪 **Specialized Analysis**
 - **TOSOH HLC-723G11** - Glycohemoglobin analyzer for HbA1c measurement
@@ -184,7 +184,7 @@ This knowledge base is created for educational and professional use in the medic
 September 2026
 
 **Latest additions:**
-- **CAL6000 with MC** - Multi-channel clinical chemistry analyzer
+- **CAL6000 with MC** - Multi-channel hematology analyzer
 - FA-N Hemoculture System analyzer
 - Mindray Chemistry Analyzers system
 - Complete CX Series documentation portal

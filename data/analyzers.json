@@ -283,9 +283,9 @@
     {
         "id": "cal6000",
         "name": "CAL6000 with MC",
-        "type": "Clinical Chemistry Analyzer",
+        "type": "Hematology Analyzer",
         "manufacturer": "Various (Multi-Channel System)",
-        "description": "Advanced clinical chemistry analyzer system with multi-channel capabilities. Comprehensive field guide and summary covering calibration procedures, operational parameters, quality control, and maintenance protocols.",
+        "description": "Advanced hematology analyzer system with multi-channel capabilities. Comprehensive field guide and summary covering calibration procedures, operational parameters, quality control, and maintenance protocols.",
         "parameters": [
             "Multi-Channel Analysis - Simultaneous multi-parameter measurement",
             "Calibration Management - Automated calibration tracking",
