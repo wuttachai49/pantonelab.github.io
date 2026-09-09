@@ -279,5 +279,39 @@
                 "url": "fa-n-hemoculture-guide.html"
             }
         ]
+    },
+    {
+        "id": "cal6000",
+        "name": "CAL6000 with MC",
+        "type": "Clinical Chemistry Analyzer",
+        "manufacturer": "Various (Multi-Channel System)",
+        "description": "Advanced clinical chemistry analyzer system with multi-channel capabilities. Comprehensive field guide and summary covering calibration procedures, operational parameters, quality control, and maintenance protocols.",
+        "parameters": [
+            "Multi-Channel Analysis - Simultaneous multi-parameter measurement",
+            "Calibration Management - Automated calibration tracking",
+            "Quality Control - Real-time QC monitoring and validation",
+            "Sample Processing - High-throughput sample handling",
+            "Result Accuracy - Precision measurement and reporting",
+            "System Integration - LIS connectivity and data management",
+            "Maintenance Protocols - Preventive and corrective procedures",
+            "Reagent Management - Automated reagent tracking and expiration"
+        ],
+        "troubleshooting": [
+            "Calibration drift: Verify calibrator function and electrode performance",
+            "QC failures: Check control material lot and storage conditions",
+            "Out-of-range results: Verify sample integrity and preparation",
+            "System errors: Check communication and connectivity settings",
+            "Channel malfunction: Run channel diagnostics and verification",
+            "Reagent issues: Confirm reagent compatibility and lot numbers",
+            "Sensor problems: Verify sensor cleanliness and functionality"
+        ],
+        "notes": "Professional clinical chemistry analyzer with advanced multi-channel capabilities. Features comprehensive calibration management, real-time quality control, and high-throughput sample processing. Includes detailed field guide with operational procedures, maintenance protocols, and troubleshooting guidance. Essential for core laboratory operations requiring precise multi-parameter analysis.",
+        "attachments": [
+            {
+                "name": "⭐ CAL6000 with MC | Summary Guide",
+                "type": "Interactive HTML",
+                "url": "cal6000-field-guide.html"
+            }
+        ]
     }
 ]
